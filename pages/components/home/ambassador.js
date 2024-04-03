@@ -9,9 +9,9 @@ export default function Ambassador() {
             </div>
             <div className="bg-gray-100 p-4 pt-8 flex flex-col items-center justify-center">
                 <div className="text-3xl font-bold text-center">@herhqofficial</div>
-                <div className="text-center my-3 w-[420px]">Follow our Instagram to stay in the know!</div>
-                <div className="p-4 text-center w-[500px] text-gray-600">Discover the joy 😊 of our satisfied customers! See the styles loved 💗 by others and share in their happiness.</div>
-                <div className="p-4 text-center w-[600px] text-gray-900">
+                <div className="text-center my-3 max-w-[420px]">Follow our Instagram to stay in the know!</div>
+                <div className="p-4 text-center max-w-[500px] text-gray-600">Discover the joy 😊 of our satisfied customers! See the styles loved 💗 by others and share in their happiness.</div>
+                <div className="p-4 text-center max-w-[600px] text-gray-900">
                     “Could you be our next HQ babe?" To become an ambassador, click the “become our
                     ambassador” link below and register your details.
                 </div>
