@@ -6,11 +6,16 @@ const MyContextProvider = ({ children }) => {
 
   const [products, setProducts] = useState({});
 
+  const addAsync = async (cart)=>{
+    let toAd = await JSON.parse(cart);
+    console.log(toAd);
+    setProducts(toAd);
+  }
+
   useEffect(() => {
-    console.log("useEffect")
     const cart = localStorage.getItem('cart');
     if(cart){
-      setProducts( JSON.parse(cart));
+      addAsync(cart);
     }
   }, []);
 
