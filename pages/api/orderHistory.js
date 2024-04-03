@@ -7,16 +7,16 @@ function getOrders(orders, products) {
     products.forEach(product => {
         map[product._id] = product;
     });
-    if(!orders.cart){
-        return [];
-    }
+    
     orders.forEach(order => {
-        order.cart = order.cart.map((item) => {
-            return {
-                ...item,
-                ...map[item.id]
-            }
-        });
+        if(order.cart){
+            order.cart = order.cart.map((item) => {
+                return {
+                    ...item,
+                    ...map[item.id]
+                }
+            });
+        }
     });
     orders.sort((a, b) => b.time - a.time);
     return orders;

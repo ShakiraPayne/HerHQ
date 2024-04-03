@@ -48,6 +48,7 @@ export default function User() {
         localStorage.removeItem('user');
         localStorage.removeItem('token');
         localStorage.removeItem('name');
+        localStorage.removeItem('cart');
         setUser(null);
         await fetch('/api/logout');
         router.push('/user/login');
