@@ -7,6 +7,9 @@ function getOrders(orders, products) {
     products.forEach(product => {
         map[product._id] = product;
     });
+    if(!orders.cart){
+        return [];
+    }
     orders.forEach(order => {
         order.cart = order.cart.map((item) => {
             return {
