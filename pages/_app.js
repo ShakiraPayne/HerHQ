@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import LoadingBar from 'react-top-loading-bar'
 import { MyContextProvider } from "@/context/createContext";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
 
@@ -22,6 +23,10 @@ export default function App({ Component, pageProps }) {
 
   return <>
     <Toaster />
+    <Head>
+      <title>Clothing Brand</title>
+      <link rel="icon" href="/icons/favicon.jpg" className="bg-white"/>
+    </Head>
     <LoadingBar
         height={4}
         color='#FF0075'
