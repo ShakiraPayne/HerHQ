@@ -22,8 +22,8 @@ export default function ProductDisplay({ product }) {
             </div>
             <Link href={"/buy/" + product.id}>
                 <Image src={product.images[0]} alt="product" height={300} width={300} className="w-52 h-68" />
-                <div className="text-gray-700">{product.name}</div>
-                <div className="text-gray-700 text-sm">€{product.price}</div>
+                <div className="text-gray-700 font-bold">{product.name}</div>
+                <div className="text-gray-700 text-md font-bold">€{product.price}</div>
             </Link>
         </div>
     </div>

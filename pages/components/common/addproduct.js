@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Product from "./product"
 
 export default function AddProduct({items}) {
