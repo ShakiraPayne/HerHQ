@@ -67,7 +67,6 @@ export async function getProducts(){
 export async function storeOrder(order){
     const db = await getDb();
     const result = await db.collection('orders').insertOne(order);
-    console.log(result);
     releaseDb();
     return result;
 }

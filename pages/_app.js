@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
     <Toaster />
     <LoadingBar
         height={4}
-        color='#f11946'
+        color='#FF0075'
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />

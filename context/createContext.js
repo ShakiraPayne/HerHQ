@@ -8,7 +8,6 @@ const MyContextProvider = ({ children }) => {
 
   const addAsync = async (cart)=>{
     let toAd = await JSON.parse(cart);
-    console.log(toAd);
     setProducts(toAd);
   }
 

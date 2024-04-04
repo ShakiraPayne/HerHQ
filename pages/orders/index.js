@@ -21,7 +21,6 @@ export default function Orders() {
             })
         }).then(res => res.json())
             .then(data => {
-                console.log(data.orders)
                 setOrder(data.orders);
                 setLoading(false);
             });
