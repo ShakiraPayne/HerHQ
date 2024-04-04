@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="flex items-center md:justify-around justify-between flex flex-wrap">
                 <div className="w-fit">
                     <div className="m-2 rounded-md p-6">
-                        <h1 className="font-bold text-lg text-gray-700 py-4">Subscribe to Herhq.</h1>
+                        <h1 className="font-bold text-lg text-gray-700 py-4">Subscribe to HerHq.</h1>
                         <p className="text-sm py-1">Receive our newsletter on the latest deals and happenings</p>
                         <div className="py-6">
                             <input ref={emailRef} type="email" className="mr-2 bg-transparent outline outline-0" placeholder="example@mail.com" />

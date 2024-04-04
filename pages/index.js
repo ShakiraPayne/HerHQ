@@ -9,7 +9,7 @@ export default function Home(){
     <div className={`portslat h-screen relative pb-16 bg-white`}>
       <Contact/>
       <Header/>
-      <div className="flex items-center justify-center min-h-2/3 video-container">
+      <div className="flex items-center md:pb-12 justify-center min-h-2/3 video-container">
         <video className="md:hidden block" onContextMenu={e => e.preventDefault()} autoPlay={true} loop muted={true} preload="auto" playsInline controls={false}>
           <source src="https://res.cloudinary.com/dcpqx91e5/video/upload/v1711391165/herhq/video/p7nxxpiwas4thslg1mju_1.mp4" type="video/mp4" />
         </video>

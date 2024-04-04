@@ -3,19 +3,17 @@ import Image from "next/image";
 export default function Ambassador() {
     return (
         <div className="pt-16 bg-gray-100">
-            <div className="bg-gray-100 ">
-                <h2 className="nerkoone bg-white md:mx-12 md:p-8 rounded-xl text-center">You As Ambassador</h2>
-            </div>
-            <div className="bg-gray-100 p-4 pt-8 flex flex-col items-center justify-center">
-                <div className="text-3xl font-bold text-center">@herhqofficial</div>
-                <div className="text-center my-3 max-w-[420px]">Follow our Instagram to stay in the know!</div>
-                <div className="p-4 text-center max-w-[500px] text-gray-600">Discover the joy 😊 of our satisfied customers! See the styles loved 💗 by others and share in their happiness.</div>
+            <div className="h-0.5 w-full bg-pink-500"></div>
+            <div className="bg-white p-4 pt-8 flex flex-col items-center justify-center">
+                <div className="text-3xl font-bold text-center"><span className="text-2xl">Follow</span> @herhqofficial</div>
+                <div className="text-center my-3 max-w-[420px]">Follow our <span className="text-pink-700">Instagram</span> to stay in the know!</div>
+                <div className="p-4 text-center max-w-[500px] text-gray-600">Discover the joy 😊 of our satisfied customers! See the styles 💗 by others and share the styles you 💗</div>
                 <div className="p-4 text-center max-w-[600px] text-gray-900">
-                    “Could you be our next HQ babe?" To become an ambassador, click the “become our
+                    “Could you be our next <span className="text-pink-700">HQ babe?</span>" To become an ambassador, click the “become our
                     ambassador” link below and register your details.
                 </div>
             </div>
-            <div className="grid md:grid-cols-3 bg-gray-100 content-center md:p-6 gap-6 place-items-center place-content-center">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 bg-white content-center md:p-6 gap-6 place-items-center place-content-center">
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391264/herhq/ambassador/mhciicknidj9idtmjsc7.jpg"} />
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391260/herhq/ambassador/ggryfubwx87lp8cwezva.jpg"} />
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391258/herhq/ambassador/aopzcrn9wn0taspqljgu.jpg"} />
@@ -23,18 +21,19 @@ export default function Ambassador() {
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391257/herhq/ambassador/xxqt1gtxtnxc2etij2dh.jpg"} />
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391264/herhq/ambassador/mhciicknidj9idtmjsc7.jpg"} />
             </div>
+            <div className="h-0.5 w-full bg-pink-500"></div>
         </div>
     )
 }
 
 function Card({ img }) {
-    return <div className="bg-gray-100 max-w-96 p-3">
+    return <div className="bg-white max-w-96 p-3">
         <div className="bg-white max-w-96 border h-full rounded-sm">
             <div className="flex items-center px-4 py-3">
-                <img className="h-8 w-8 rounded-full" src="https://picsum.photos/id/1027/150/150" />
+                <Image height={60} width={60} src="/icons/logo.png" alt="Profile" className="h-10 w-10 rounded-full border p-2" />
                 <div className="ml-3 ">
-                    <span className="text-sm font-semibold antialiased block leading-tight">8fact</span>
-                    <span className="text-gray-600 text-xs block">Asheville, North Carolina</span>
+                    <span className="text-sm font-semibold antialiased block leading-tight">herhq</span>
+                    <span className="text-gray-600 text-xs block">Clothing {"( Brand )"}</span>
                 </div>
             </div>
             <Image height={480} width={358} src={img} alt="Ambassador" className="h-[480px]" />
