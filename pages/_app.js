@@ -3,7 +3,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import LoadingBar from 'react-top-loading-bar'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { MyContextProvider } from "@/context/createContext";
 import { useRouter } from "next/router";
 
