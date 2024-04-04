@@ -10,10 +10,10 @@ export default function Home(){
       <Contact/>
       <Header/>
       <div className="flex items-center justify-center min-h-2/3 video-container">
-        <video onPlay={ () => {this.controls = false;} } className="md:hidden block" onContextMenu={e => e.preventDefault()} autoPlay={true} loop muted={true} preload="auto" playsInline controls={false}>
+        <video className="md:hidden block" onContextMenu={e => e.preventDefault()} autoPlay={true} loop muted={true} preload="auto" playsInline controls={false}>
           <source src="https://res.cloudinary.com/dcpqx91e5/video/upload/v1711391165/herhq/video/p7nxxpiwas4thslg1mju_1.mp4" type="video/mp4" />
         </video>
-        <video onPlay={ () => {this.controls = false;} } className="hidden md:block w-2/3" onContextMenu={e => e.preventDefault()} autoPlay={true} loop muted={true} playsInline preload="auto" controls={false}>
+        <video className="hidden md:block w-2/3" onContextMenu={e => e.preventDefault()} autoPlay={true} loop muted={true} playsInline preload="auto" controls={false}>
           <source src="https://res.cloudinary.com/dcpqx91e5/video/upload/v1711391162/herhq/video/vzswpwjeoutvhl66ntvj_2.mp4" type="video/mp4" />
         </video>
       </div>
