@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import LoadingBar from 'react-top-loading-bar'
