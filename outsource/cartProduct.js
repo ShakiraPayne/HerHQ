@@ -59,7 +59,7 @@ export default function CartProduct({ item }) {
                     </div>
                 </div>
                 <div className="bg-gray-300 p-2 rounded-xl">
-                    <span className="text-gray-700 font-xl">Price: </span><span className="font-bold">${item.price}</span>
+                    <span className="text-gray-700 font-xl">Price: </span><span className="font-bold">€{item.price}</span>
                 </div>
             </div>
         </div>

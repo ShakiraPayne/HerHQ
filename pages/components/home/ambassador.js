@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Ambassador() {
@@ -23,22 +22,13 @@ export default function Ambassador() {
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391262/herhq/ambassador/gyg0ve0isj8pojcvohmv.jpg"} />
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391257/herhq/ambassador/xxqt1gtxtnxc2etij2dh.jpg"} />
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391264/herhq/ambassador/mhciicknidj9idtmjsc7.jpg"} />
-                {/* <div className="outline outline-4 h-96 bg-gray-100 rounded-md md:h-full flex items-center justify-center outline-dotted outline-zinc-700 bg-zinc-100 m-2 rounded-xl">
-                    <Link href={'/ambassador'}>
-                        <div className="text-center text-gray-700">
-                            <h1 className="text-xl">Next</h1>
-                            <h1 className="text-4xl">?</h1>
-                            <h1 className="text-xl font-bold">YOU!</h1>
-                        </div>
-                    </Link>
-                </div> */}
             </div>
         </div>
     )
 }
 
 function Card({ img }) {
-    return <div className="bg-gray-100 max-w-96">
+    return <div className="bg-gray-100 max-w-96 p-3">
         <div className="bg-white max-w-96 border h-full rounded-sm">
             <div className="flex items-center px-4 py-3">
                 <img className="h-8 w-8 rounded-full" src="https://picsum.photos/id/1027/150/150" />

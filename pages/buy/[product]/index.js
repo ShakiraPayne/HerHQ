@@ -91,7 +91,7 @@ const ProductPage = ({ product }) => {
                         </div>
                         <div className="md:p-20 p-4 h-full flex flex-col justify-start">
                             <h1 className="font-bold md:text-3xl greatvibes text-xl">{product.name}</h1>
-                            <h1 className="py-4 text-gray-800 font-bold">MRP : <span className="text-gray-800 font-medium text-xl">${product.price}</span> </h1>
+                            <h1 className="py-4 text-gray-800 font-bold">MRP : <span className="text-gray-800 font-medium text-xl">€{product.price}</span> </h1>
                             <h1 className="text-2xl text-gray-700 greatvibes font-bold">{product.description}</h1>
                             <h1 className="text-sm text-gray-500 my-2 hover:underline cursor-pointer">Inclusive of all taxes</h1>
                             <div className="text-lg mt-4">

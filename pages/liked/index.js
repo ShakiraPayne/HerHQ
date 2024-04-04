@@ -63,7 +63,7 @@ export default function Liked({items}) {
                                     </div>
                                 </div>
                                 <div className="p-3 flex flex-col items-center w-full justify-center">
-                                    ${item.price}
+                                €{item.price}
                                 </div>
                             </div>
                         </div>

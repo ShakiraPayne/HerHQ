@@ -32,7 +32,7 @@ export default function Deals() {
                                 <div key={index} className="border border-2 w-fit rounded-xl overflow-hidden">
                                     <div className="bg-red-600 font-bold p-2 text-white text-center">{product.discount}% OFF SALE</div>
                                     <Image height={300} width={180} src={product.img} alt="Image 1" className="h-40 w-36 sm:w-44 sm:h-60 md:w-60 md:h-80" />
-                                    <div className="p-1 text-md text-center"><span className="text-red-800 line-through">${product.dynamicPrice}</span> <span className="text-gray-800">${product.price}</span></div>
+                                    <div className="p-1 text-md text-center"><span className="text-red-800 line-through">€{product.dynamicPrice}</span> <span className="text-gray-800">€{product.price}</span></div>
                                 </div>
                             )
                         })
