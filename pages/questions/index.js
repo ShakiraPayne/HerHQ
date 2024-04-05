@@ -7,7 +7,7 @@ export default function Questions() {
         <div className={`portslat h-screen relative pb-16 bg-white`}>
             <Contact />
             <Header />
-            <div className="md:px-32 p-12 md:text-md text-sm">
+            <div className="md:px-32 p-6 md:text-md text-sm">
                 <div className="p-3 mb-6">
                     <h1 className="font-bold text-2xl my-6">Our care instructions: How to wash your bikini</h1>
                     <p className="text-sm">
