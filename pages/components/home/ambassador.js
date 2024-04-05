@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Ambassador() {
@@ -5,13 +6,9 @@ export default function Ambassador() {
         <div className="pt-16 bg-gray-100">
             <div className="h-0.5 w-full bg-pink-500"></div>
             <div className="bg-white p-4 pt-8 flex flex-col items-center justify-center">
-                <div className="text-3xl font-bold text-center"><span className="text-2xl">Follow</span> @herhqofficial</div>
-                <div className="text-center my-3 max-w-[420px]">Follow our <span className="text-pink-700">Instagram</span> to stay in the know!</div>
-                <div className="p-4 text-center max-w-[500px] text-gray-600">Discover the joy 😊 of our satisfied customers! See the styles 💗 by others and share the styles you 💗</div>
-                <div className="p-4 text-center max-w-[600px] text-gray-900">
-                    “Could you be our next <span className="text-pink-700">HQ babe?</span>" To become an ambassador, click the “become our
-                    ambassador” link below and register your details.
-                </div>
+                <div className="font-mono text-xl">Follow our <Link className="text-pink-700" href={'https://www.instagram.com/herhqofficial/'}>Instagram</Link> to stay in the know.</div>
+                <div className="text-3xl my-6 font-bold text-center">@herhqofficial</div>
+                <div className="p-4 text-center max-w-[500px] text-gray-600">See the styles 💗 by others and share the styles you 💗</div>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 bg-white content-center md:p-6 gap-6 place-items-center place-content-center">
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391264/herhq/ambassador/mhciicknidj9idtmjsc7.jpg"} />
@@ -20,6 +17,12 @@ export default function Ambassador() {
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391262/herhq/ambassador/gyg0ve0isj8pojcvohmv.jpg"} />
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391257/herhq/ambassador/xxqt1gtxtnxc2etij2dh.jpg"} />
                 <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391264/herhq/ambassador/mhciicknidj9idtmjsc7.jpg"} />
+            </div>
+            <div className="flex bg-white py-8 flex-col items-center justify-center">
+                <div className="p-4 text-center max-w-[600px] text-gray-900">
+                    <span className="font-mono">“Could you be our next <span className="text-pink-700"><Link href={'/ambassador'}>HQ babe?</Link></span></span>" To become an ambassador, click the “become our
+                    ambassador” link below and register your details.
+                </div>
             </div>
             <div className="h-0.5 w-full bg-pink-500"></div>
         </div>

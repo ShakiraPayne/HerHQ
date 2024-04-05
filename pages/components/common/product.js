@@ -10,7 +10,7 @@ export default function ProductDisplay({ product }) {
 
     if( !product || !product.id  || !product.name || !product.price ) return <div>Product not found</div>;
 
-    return <div className='w-fit greatvibes mx-3 inline-block'>
+    return <div className='w-fit font-mono mx-3 inline-block'>
         <div className="border relative md:md:hover:scale-105 transition duration-500 rounded-lg overflow-hidden">
             <div className="absolute w-full flex justify-between">
                 <div onClick={()=>{toggleCart(product)}} className="p-2 bg-white border w-fit rounded-md m-2 hover:bg-pink-100 hover:border-pink-400">
@@ -22,8 +22,8 @@ export default function ProductDisplay({ product }) {
             </div>
             <Link href={"/buy/" + product.id}>
                 <Image src={product.images[0]} alt="product" height={300} width={300} className="w-52 h-68" />
-                <div className="text-gray-700 font-bold">{product.name}</div>
-                <div className="text-gray-700 text-md font-bold">€{product.price}</div>
+                <div className="text-gray-700 font-serif">{product.name}</div>
+                <div className="text-gray-700 text-md font-serif">€{product.price}</div>
             </Link>
         </div>
     </div>

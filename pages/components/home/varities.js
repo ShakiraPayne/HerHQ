@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Varities() {
     return (
         <div className="p-3 text-2xl block font-bold bg-gray-100 nerkoone">
-            <h1 className="text-center my-10 mt-6 vibes">SHOP NOW</h1>
+            <h1 className="text-center font-mono my-10 mt-6 vibes">SHOP NOW</h1>
             <Link href={'/buy'}>
                 <div className="grid md:grid-cols-4 gap-4 grid-cols-2 md:px-16 md:gap-6 text-xl sm:text-md greatvibes font-bold text-center">
                     <div className="rounded-xl bg-white overflow-hidden">

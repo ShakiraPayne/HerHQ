@@ -63,7 +63,7 @@ export default function Home() {
             <div className="mt-6 flex flex-col items-center">
                 <div className="max-w-lg">
                     <div className="p-4">
-                        <h1 className="text-center font-bold text-xl md:text-2xl">Become a HHQ Ambassador</h1>
+                        <h1 className="text-center font-bold text-xl font-mono md:text-2xl">Become a <span className="text-pink-700">HHQ Ambassador</span></h1>
                         <h2 className="my-6 text-center">HHQ are looking to partner with females around the world</h2>
                         <hr className="ml-6 w-1/3" />
                         <p className="p-2 mt-4 text-sm">That are keen to represent and the face of our brand. If this is something that you are interested in, please fill out the below field and we will come back to you if your application is successful.</p>

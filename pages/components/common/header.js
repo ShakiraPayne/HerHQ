@@ -31,7 +31,7 @@ function DesktopHeader() {
                         <Image priority height={40} width={80} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/ukcqfbti4lz6gxafvpag.png" alt="Logo" className="h-16 w-24" />
                     </Link>
                 </div>
-                <div className="flex items-center vibes justify-around lg:gap-6 gap-4 text-sm">
+                <div className="flex items-center font-mono justify-around lg:gap-6 gap-4 text-md">
                     <Link href={'/'}>
                         <p>HOME</p>
                     </Link>
@@ -79,19 +79,19 @@ function AppHeader() {
                 </Link>
                 <Link href={'/buy'}>
                     <div className="p-2">
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/c7jgfcssbfz39sxudmum.png" alt="Deals" className="h-6 w-6" />
+                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/c7jgfcssbfz39sxudmum.png" alt="Deals" className="h-8 w-8" />
                         <h1>Shop</h1>
                     </div>
                 </Link>
                 <Link href={'/cart'}>
                     <div className="p-2">
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391378/herhq/icons/neq2myinxumd7tgmqd6a.png" alt="Cart" className="h-6 w-6" />
+                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391378/herhq/icons/neq2myinxumd7tgmqd6a.png" alt="Cart" className="h-8 w-8" />
                         <h1>Cart</h1>
                     </div>
                 </Link>
                 <Link href={'/user'}>
                     <div className="p-2">
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391361/herhq/icons/dark/jug1fnzxbtww7zsbjsrn.png" alt="Account" className="h-6 w-6" />
+                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391361/herhq/icons/dark/jug1fnzxbtww7zsbjsrn.png" alt="Account" className="h-8 w-8" />
                         <h1>User</h1>
                     </div>
                 </Link>
