@@ -5,7 +5,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import toast from 'react-hot-toast';
 import Image from 'next/image';
-import Order from '../components/admin/order';
+import Order from '../components/admin/inputOrder';
 import Product from '../components/admin/product';
 
 export default function Admin() {
@@ -19,7 +19,7 @@ export default function Admin() {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [showAddForm, setShowAddForm] = useState(false);
-    const [orders, setOrders] = useState([{ time: "1777777777777", paymentIntent: "loading", email: "loading", contactDetails: "loading", cart: [{ name: 'Loading', images: [], quantity: 1, price: 1 }] }]);
+    const [orders, setOrders] = useState([{ time: "1777777777777", paymentIntent: "loading", email: "loading", contactDetails: "loading", cart: [{ name: 'Loading', images: ['/icons/logo.png'], quantity: 1, price: 1 }] }]);
 
     const fetchDetails = async () => {
         setLoading(true);
@@ -120,7 +120,7 @@ export default function Admin() {
                                 </div>
                                 <div className="col-span-2 md:col-span-1">
                                     <label className="block mb-1 text-[13px] font-bold text-gray-900" htmlFor="file_input">Upload Photo</label>
-                                    <input ref={imgSrcRef} multiple className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md cursor-pointer bg-gray-50  focus:outline-none dark:bg-gray-700 p-2 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file" />
+                                    <input ref={imgSrcRef} multiple className="block w-full text-sm text-gray-900 border border-gray-300 rounded-md cursor-pointer bg-gray-50  focus:outline-none p-2" id="file_input" type="file" />
                                 </div>
                                 <div className="col-span-2 md:col-span-1">
                                     <label htmlFor="name" className="block mb-1 font-bold text-[13px] text-gray-900">Rating</label>
@@ -191,7 +191,7 @@ export default function Admin() {
                                 <div className="col-span-2 p-2">Date & Time</div>
                                 <div className="col-span-3 p-2">Customer</div>
                                 <div className="col-span-3 p-2">Contact</div>
-                                <div className="col-span-2 p-2 text-left ml-3">Status</div>
+                                <div className="col-span-2 p-2 text-left ml-3">Tracking</div>
                             </div>
                             <div>
                                 {

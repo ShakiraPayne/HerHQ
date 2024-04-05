@@ -16,6 +16,7 @@ function getOrders(orders, products){
             }
         });
     });
+    orders.sort((a, b) => b.time - a.time);
     return orders;
 }
 
