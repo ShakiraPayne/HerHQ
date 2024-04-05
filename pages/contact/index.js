@@ -54,7 +54,7 @@ export default function Home() {
             <Contact />
             <Header />
             <div className="flex flex-col items-center">
-                <div className="p-2 min-w-96">
+                <div className="p-2 min-w-80 w-96">
                     <h1 className="font-bold text-xl text-center my-2">Still Need Help?</h1>
                     <div>
                         <label htmlFor="input-group-1" className="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
