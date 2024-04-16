@@ -64,7 +64,7 @@ export default function Footer() {
                     <h1 className="my-3 w-60">Become Our Ambassador</h1>
                 </Link>
                 <Link href={'/sizeChart'}>
-                    <h1 className="my-3 w-60">Fit Guide {"( Size Chart )"}</h1>
+                    <h1 className="my-3 w-60">Size Chart</h1>
                 </Link>
                 <Link href={'/policies'}>
                     <h1 className="my-3 w-60">Store Policies</h1>
