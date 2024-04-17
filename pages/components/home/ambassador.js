@@ -11,12 +11,12 @@ export default function Ambassador() {
                 <div className="p-4 text-center max-w-[500px] text-gray-600">See the styles 💗 by others and share the styles you 💗</div>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 bg-white content-center md:p-6 gap-6 place-items-center place-content-center">
-                <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391264/herhq/ambassador/mhciicknidj9idtmjsc7.jpg"} />
-                <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391260/herhq/ambassador/ggryfubwx87lp8cwezva.jpg"} />
-                <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391258/herhq/ambassador/aopzcrn9wn0taspqljgu.jpg"} />
-                <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391262/herhq/ambassador/gyg0ve0isj8pojcvohmv.jpg"} />
-                <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391257/herhq/ambassador/xxqt1gtxtnxc2etij2dh.jpg"} />
-                <Card img={"https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391264/herhq/ambassador/mhciicknidj9idtmjsc7.jpg"} />
+                <Card img={"/ambassador/amb1.jpg"} />
+                <Card img={"/ambassador/amb2.jpg"} />
+                <Card img={"/ambassador/amb3.jpg"} />
+                <Card img={"/ambassador/amb4.jpg"} />
+                <Card img={"/ambassador/amb5.jpg"} />
+                <Card img={"/ambassador/amb1.jpg"} />
             </div>
             <div className="flex bg-white py-8 flex-col items-center justify-center">
                 <div className="p-4 text-center max-w-[600px] text-gray-900">
