@@ -1,6 +1,7 @@
 {
     "name": "Herhq Clothing Brand",
     "short_name": "Herhq",
+    "description": "Herhq Clothing Brand",
     "icons": [
       {
         "src": "/icons/logo.png",
