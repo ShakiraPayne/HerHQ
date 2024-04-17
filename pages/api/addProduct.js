@@ -1,7 +1,7 @@
 import cloudinary from "cloudinary";
 import { createRouter } from "next-connect";
 import multer from "multer";
-import { getDb } from "@/utils/mongodb";
+import { getDb } from "/utils/mongodb";
 import jwt from "jsonwebtoken";
 const SECRET_HASH_KEY = process.env.SECRET_HASH_KEY;
 const admin = process.env.ADMIN_ID;

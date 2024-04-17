@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useContext, useState } from "react"
-import { MyContext } from '@/context/createContext';
+import { MyContext } from '/context/createContext';
 
 export default function CartProduct({ item }) {
     const { toggleCart, toggleWishlist, sizeUpdate, qtyUpdate } = useContext(MyContext);

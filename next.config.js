@@ -1,11 +1,13 @@
-const runtimeCaching = require("next-pwa/cache");
 const withPWA = require("next-pwa")({
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-    runtimeCaching,
-    buildExcludes: [/middleware-manifest.json$/],
+  dest: "public",
+  register: true,
+  skipWaiting: true,
 });
 
-const nextConfig = withPWA({});
+const nextConfig = withPWA({
+  experimental: {
+    newNextLinkBehavior: true,
+  },
+});
+
 module.exports = nextConfig;

@@ -1,6 +1,6 @@
-import Contact from "@/pages/components/common/contact";
-import Header from "@/pages/components/common/header";
-import Footer from "@/pages/components/common/footer";
+import Contact from "/pages/components/common/contact";
+import Header from "/pages/components/common/header";
+import Footer from "/pages/components/common/footer";
 
 export default function Processing() {
     return (

@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import { getDb } from '@/utils/mongodb';
+import { getDb } from '/utils/mongodb';
 
 export default async function addTrack(req, res) {
     try {

@@ -1,6 +1,6 @@
 import Header from "../../components/common/header";
 import Contact from "../../components/common/contact";
-import Footer from "@/pages/components/common/footer";
+import Footer from "/pages/components/common/footer";
 import { useRouter } from "next/router";
 import {
     EmbeddedCheckoutProvider,

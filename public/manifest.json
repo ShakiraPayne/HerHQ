@@ -1,16 +1,27 @@
 {
     "name": "Herhq Clothing Brand",
-    "short_name": "herhq",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000",
+    "short_name": "Herhq",
     "icons": [
+      {
+        "src": "/icons/logo.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "Logo"
+      },
+      {
+        "src": "/icons/logo.png",
+        "sizes": "384x384",
+        "type": "image/png"
+      },
       {
         "src": "/icons/logo.png",
         "sizes": "512x512",
         "type": "image/png"
       }
-    ]
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
   }
-  

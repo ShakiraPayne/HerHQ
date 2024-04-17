@@ -1,6 +1,6 @@
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-import { storeOrder } from "@/utils/mongodb";
+import { storeOrder } from "/utils/mongodb";
 const endpointSecret = "whsec_9106c96b29bff16cc9e343f2fa2f97137d2036a5dd7fe49ce05070949e13be91";
 import jwt from "jsonwebtoken";
 const SECRET_HASH_KEY = process.env.SECRET_HASH_KEY;

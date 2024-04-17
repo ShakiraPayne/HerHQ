@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { getDb } from '@/utils/mongodb';
+import { getDb } from '/utils/mongodb';
 
 const compareOTPAndHashedOTP = async (otp, hashOtp) => {
     return await bcrypt.compare(otp.toString(), hashOtp);

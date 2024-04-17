@@ -1,10 +1,10 @@
 import { MyContext } from '../../../context/createContext';
-import Contact from "@/pages/components/common/contact";
-import Footer from "@/pages/components/common/footer";
-import Header from "@/pages/components/common/header";
+import Contact from "/pages/components/common/contact";
+import Footer from "/pages/components/common/footer";
+import Header from "/pages/components/common/header";
 import 'react-loading-skeleton/dist/skeleton.css';
 import Skeleton from "react-loading-skeleton";
-import { getProducts } from "@/utils/mongodb";
+import { getProducts } from "/utils/mongodb";
 import React, { useContext } from 'react';
 import Image from "next/image";
 import toast from 'react-hot-toast';

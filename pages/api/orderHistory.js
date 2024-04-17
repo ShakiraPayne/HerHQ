@@ -1,4 +1,4 @@
-import { getDb } from "@/utils/mongodb";
+import { getDb } from "/utils/mongodb";
 const secret_key = process.env.SECRET_HASH_KEY;
 import jwt from 'jsonwebtoken';
 

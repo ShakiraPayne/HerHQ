@@ -14,7 +14,7 @@ import {
 import { useContext, useState } from 'react';
 import Image from "next/image";
 import { loadStripe } from '@stripe/stripe-js'
-import CartProduct from "@/outsource/cartProduct";
+import CartProduct from "/outsource/cartProduct";
 import Footer from "../components/common/footer";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
