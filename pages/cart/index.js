@@ -28,7 +28,7 @@ export default function Cart({ items }) {
     const price = cart.reduce((acc, item) => acc + parseFloat(item.price * item.quantity), 0);
 
     const startPayment = async () => {
-        const notify = () => toast.loading('Loading Payment Gateway');
+        const notify =  toast.loading('Loading Payment Gateway');
         const userId = localStorage.getItem('token');
         if (!userId) {
             toast.custom((t) => {
