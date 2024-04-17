@@ -41,7 +41,7 @@ export default function Liked({ items }) {
                                             <option className="px-2" value="l">L</option>
                                         </select>
                                     </div>
-                                    <div><span className="font-bold my-3">Price:</span> € {item.price}</div>
+                                    <div><span className="font-bold my-3">Price:</span> £ {item.price}</div>
                                     <div className="text-xs font-bold text-green-800">You saved 12% OFF</div>
                                 </div>
                             </div>

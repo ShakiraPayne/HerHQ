@@ -52,7 +52,7 @@ export default function Footer() {
                 <div className="m-8">
                     <div className="flex justify-start">
                         <span>©</span>
-                        <Image priority height={40} width={80} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/ukcqfbti4lz6gxafvpag.png" alt="logo" className="h-12" />
+                        <Image priority height={40} width={80} src="/icons/logo.png" alt="logo" className="h-12" />
                     </div>
                     <h1 className="text-sm">HER HQ PVT LTD // EST-2020</h1>
                     <h1 className="text-sm">@herhq</h1>
@@ -79,7 +79,7 @@ export default function Footer() {
                     <h1 className="my-3 w-60">Contact</h1>
                 </Link>
             </div>
-            <Image height={60} width={150} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/x3jv9fypjuoyqmluirfk.jpg" alt="secure" className="w-96 p-1" />
+            <Image height={60} width={150} src="/icons/secure.jpeg" alt="secure" className="w-96 p-1" />
             <footer className="text-gray-800 p-4 text-center text-sm">
                 <p>© 2024 Herhq. Build For YOU.</p>
             </footer>

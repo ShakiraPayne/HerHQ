@@ -10,7 +10,7 @@ export default function Header() {
             <div className="flex items-center justify-around py-2">
                 <div></div>
                 <Link href={'/'}>
-                    <Image priority height={80} width={80} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/ukcqfbti4lz6gxafvpag.png" alt="Logo" className="h-16 w-24" />
+                    <Image priority height={80} width={80} src="/icons/logon.png" alt="Logo" className="h-16 w-24" />
                 </Link>
                 <Link href={'/liked'}>
                     <Image height={80} width={80} src="/icons/heart.png" alt="Liked" className="h-6 w-6" />
@@ -28,7 +28,7 @@ function DesktopHeader() {
             <div className="flex items-center justify-around py-2">
                 <div>
                     <Link href={'/'}>
-                        <Image priority height={40} width={80} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/ukcqfbti4lz6gxafvpag.png" alt="Logo" className="h-16 w-24" />
+                        <Image priority height={40} width={80} src="/icons/logo.png" alt="Logo" className="h-16 w-24" />
                     </Link>
                 </div>
                 <div className="flex items-center font-mono justify-around lg:gap-6 gap-4 text-md">
@@ -47,13 +47,13 @@ function DesktopHeader() {
                 </div>
                 <div className="flex justify-around gap-6">
                     <Link href={'/cart'}>
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391361/herhq/icons/dark/ocn4y7jnrkjhaao1ne0n.png" alt="Cart" className="h-6 w-6" />
+                        <Image height={20} width={20} src="/icons/cart.png" alt="Cart" className="h-6 w-6" />
                     </Link>
                     <Link href={'/liked'}>
                         <Image height={20} width={20} src="/icons/heart.png" alt="Liked" className="h-6 w-6" />
                     </Link>
                     <Link href={'/user'}>
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391361/herhq/icons/dark/jug1fnzxbtww7zsbjsrn.png" alt="Account" className="h-7 w-7" />
+                        <Image height={20} width={20} src="/icons/user.png" alt="Account" className="h-7 w-7" />
                     </Link>
                 </div>
             </div>
@@ -79,19 +79,19 @@ function AppHeader() {
                 </Link>
                 <Link href={'/buy'}>
                     <div className="p-2">
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391395/herhq/icons/c7jgfcssbfz39sxudmum.png" alt="Deals" className="h-8 w-8" />
+                        <Image height={20} width={20} src="/icons/deals.png" alt="Deals" className="h-8 w-8" />
                         <h1>Shop</h1>
                     </div>
                 </Link>
                 <Link href={'/cart'}>
                     <div className="p-2">
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391378/herhq/icons/neq2myinxumd7tgmqd6a.png" alt="Cart" className="h-8 w-8" />
+                        <Image height={20} width={20} src="/icons/cart.png" alt="Cart" className="h-8 w-8" />
                         <h1>Cart</h1>
                     </div>
                 </Link>
                 <Link href={'/user'}>
                     <div className="p-2">
-                        <Image height={20} width={20} src="https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391361/herhq/icons/dark/jug1fnzxbtww7zsbjsrn.png" alt="Account" className="h-8 w-8" />
+                        <Image height={20} width={20} src="/icons/user.png" alt="Account" className="h-8 w-8" />
                         <h1>User</h1>
                     </div>
                 </Link>

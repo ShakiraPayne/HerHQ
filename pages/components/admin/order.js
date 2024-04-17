@@ -64,7 +64,7 @@ export default function Order({ order }) {
                                 <div className="h-fit col-span-1 p-2">
                                     <div className="text-center">{product.quantity} <span className="text-gray-600 text-sm font-bold">Qty</span></div>
                                 </div>
-                                <div className="p-2">€ {product.price}</div>
+                                <div className="p-2">£ {product.price}</div>
                             </div>
                         )
                     })

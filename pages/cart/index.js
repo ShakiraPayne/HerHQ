@@ -128,15 +128,15 @@ export default function Cart({ items }) {
                             <div className="text-gray-800 border border-2 border-gray-600 bg-white p-2 rounded-xl overflow-hidden my-2">
                                 <div className="flex justify-between mx-6">
                                     <h1>SubTotal:</h1>
-                                    <h2>€ {price}</h2>
+                                    <h2>£ {price}</h2>
                                 </div>
                                 <div className="flex justify-between mx-6">
                                     <h1>Additional Taxes: </h1>
-                                    <h2 className="text-green-600">€ 0.00</h2>
+                                    <h2 className="text-green-600">£ 0.00</h2>
                                 </div>
                                 <div className="flex justify-between mx-6">
                                     <h1>Total:</h1>
-                                    <h2 className="text-gray-800 overline">€ {price}</h2>
+                                    <h2 className="text-gray-800 overline">£ {price}</h2>
                                 </div>
                             </div>
                             <div className="text-center">

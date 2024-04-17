@@ -103,7 +103,7 @@ export default function Admin() {
                         <div className="bg-white overflow-x-scroll max-w-xl p-4 rounded-xl">
                             <div className="flex items-center justify-between pb-4">
                                 <h1 className="text-center w-full font-bold text-xl text-gray-900">Add Product</h1>
-                                <Image alt="Add Form" onClick={() => { setShowAddForm(!showAddForm) }} src={'https://res.cloudinary.com/dcpqx91e5/image/upload/v1711391378/herhq/icons/mtxne8wzz44rwprx72av.png'} className="md:h-6 md:w-6 cursor-pointer" height={30} width={30} />
+                                <Image alt="Add Form" onClick={() => { setShowAddForm(!showAddForm) }} src={'/icons/cross.png'} className="md:h-6 md:w-6 cursor-pointer" height={30} width={30} />
                             </div>
                             <div className="grid gap-4 grid-cols-2 gap-6">
                                 <div className="col-span-2 md:col-span-1">
