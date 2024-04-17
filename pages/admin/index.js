@@ -111,7 +111,7 @@ export default function Admin() {
                                     <input ref={nameRef} type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2" placeholder="Type product name" required="" />
                                 </div>
                                 <div className="col-span-2 md:col-span-1">
-                                    <label htmlFor="name" className="block mb-1 font-bold text-[13px] text-gray-900">Min Price <span className="font-medium">{"( In EURO )"}</span></label>
+                                    <label htmlFor="name" className="block mb-1 font-bold text-[13px] text-gray-900">Min Price <span className="font-medium">{"( In GBP )"}</span></label>
                                     <input ref={priceRef} type="number" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2" placeholder="Minimum Price" required="" />
                                 </div>
                                 <div className="col-span-2 md:col-span-1">

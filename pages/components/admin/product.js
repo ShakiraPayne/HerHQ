@@ -68,7 +68,7 @@ export default function Product({ product, products, setProducts }) {
                 </div>
                 <div className="px-2 flex justify-center w-full col-span-2">
                     <div className="border rounded-md p-2 w-fit">
-                        <span className="text-gray-400">EUR </span>
+                        <span className="text-gray-400">GBP </span>
                         <input ref={priceRef} className="w-16 placeholder-gray-700 outline outline-0" placeholder={product.price} type="text" />
                     </div>
                 </div>

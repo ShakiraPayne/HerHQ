@@ -9,7 +9,7 @@ export default function Processing() {
             <Header />
             <div className="w-full my-4">
                 <div className="w-full flex items-center justify-center">
-                    <svg version="1.1" id="Layer_1" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" xmlSpace="preserve">
+                    <svg version="1.1" id="Layer_1" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" xmlSpace="preserve">
                         <path fill="none" stroke="none" d="M289.000000,513.000000 
     C192.690048,513.000000 96.880096,513.000000 1.035069,513.000000 
     C1.035069,342.398346 1.035069,171.796707 1.035069,1.097524 
