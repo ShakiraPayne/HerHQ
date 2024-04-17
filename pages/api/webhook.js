@@ -15,8 +15,11 @@ export default async function Webhook(request, response){
             const time = data.created;
             const metadata = customer.metadata;
             const token = metadata.userId;
-            const decoded = jwt.verify(token, SECRET_HASH_KEY);
-            const userId = decoded.userId;
+            let userId = "guest";
+            if(token !== 'guest'){
+                const decoded = jwt.verify(token, SECRET_HASH_KEY);
+                userId = decoded.userId;
+            }
             const cart = await JSON.parse(metadata.cart);
             const contactDetails = customer.phone;
             const email = customer.email;
