@@ -20,8 +20,8 @@ export default function Ambassador() {
             </div>
             <div className="flex bg-white py-8 flex-col items-center justify-center">
                 <div className="p-4 text-center max-w-[600px] text-gray-900">
-                    <span className="font-mono">“Could you be our next <span className="text-pink-700"><Link href={'/ambassador'}>HQ babe?</Link></span></span>" To become an ambassador, click the “become our
-                    ambassador” link below and register your details.
+                    <span className="font-mono">“Could you be our next <span className="text-pink-700"><Link href={'/ambassador'}>HQ babe?</Link></span></span>" To become an ambassador, click the 
+                    <span className="text-pink-700">“become our ambassador”</span> link below and register your details.
                 </div>
             </div>
             <div className="h-0.5 w-full bg-pink-500"></div>
