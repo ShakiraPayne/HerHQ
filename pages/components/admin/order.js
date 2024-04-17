@@ -38,7 +38,7 @@ export default function Order({ order }) {
                         <div className="font-bold p-2 w-full col-span-2 rounded-full text-xs w-fit px-2 bg-red-100 text-red-700">Processing</div>
                         : <div className="font-bold p-2 w-full col-span-2 rounded-full text-xs w-fit px-2 bg-green-200 text-green-800">
                             <Link href={order.track}>
-                                Track Link
+                                Track
                             </Link>
                         </div>
                     }

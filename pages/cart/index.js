@@ -6,6 +6,7 @@ import AddProduct from "../components/common/addproduct";
 import { MyContext } from '../../context/createContext';
 import Skeleton from "react-loading-skeleton";
 import toast from 'react-hot-toast';
+import Link from "next/link";
 import {
     EmbeddedCheckoutProvider,
     EmbeddedCheckout
@@ -30,7 +31,40 @@ export default function Cart({ items }) {
         const notify = () => toast.loading('Loading Payment Gateway');
         const userId = localStorage.getItem('token');
         if (!userId) {
-            toast.error('Please login to continue', { id: notify });
+            toast.custom((t) => {
+                console.log("Inside toast");
+                const handleGuest = (id) => {
+                    console.log("Handle guest called.");
+                    toast.dismiss(id);
+                    localStorage.setItem('token', 'guest');
+                    startPayment();
+                }
+
+                return <div className={`${t.visible ? 'animate-enter' : 'animate-leave'
+                    } max-w-md p-4 w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5`}>
+                    <h1 className='font-bold text-xl text-gray-800'>Alert!</h1>
+                    <h1 className='w-full max-w-md p-2'>Hey! You are not logged in, prefer to login. But, you can continue as guest.</h1>
+                    <hr />
+                    <div className='flex items-center justify-between p-2'>
+                        <div className="flex">
+                            <button
+                                onClick={()=>{toast.dismiss(t.id)}}
+                                className="w-full font-bold border border-transparent rounded-none p-2 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                            >
+                                <Link href={"/user/login"}>Login</Link>
+                            </button>
+                        </div>
+                        <div className="flex border-l border-gray-200">
+                            <button
+                                onClick={() => handleGuest(t.id)}
+                                className="w-full border border-transparent rounded-none rounded-r-lg p-2 flex items-center justify-center text-sm font-bold text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            >
+                                Continue as a guest
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        }, { id: notify })
             return;
         }
         setLoading(!loading);

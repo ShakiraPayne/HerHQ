@@ -14,6 +14,7 @@ import {
 } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { useState } from "react";
+import Link from 'next/link';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
@@ -33,7 +34,40 @@ const ProductPage = ({ product }) => {
         const notify = () => toast.loading('Loading Payment Gateway');
         const userId = localStorage.getItem('token');
         if (!userId) {
-            toast.error('Please login to continue', { id: notify});
+            toast.custom((t) => {
+                console.log("Inside toast");
+                const handleGuest = (id) => {
+                    console.log("Handle guest called.");
+                    toast.dismiss(id);
+                    localStorage.setItem('token', 'guest');
+                    handlePayment();
+                }
+
+                return <div className={`${t.visible ? 'animate-enter' : 'animate-leave'
+                    } max-w-md p-4 w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5`}>
+                    <h1 className='font-bold text-xl text-gray-800'>Alert!</h1>
+                    <h1 className='w-full max-w-md p-2'>Hey! You are not logged in, prefer to login. But, you can continue as guest.</h1>
+                    <hr />
+                    <div className='flex items-center justify-between p-2'>
+                        <div className="flex">
+                            <button
+                                onClick={()=>{toast.dismiss(t.id)}}
+                                className="w-full font-bold border border-transparent rounded-none p-2 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                            >
+                                <Link href={"/user/login"}>Login</Link>
+                            </button>
+                        </div>
+                        <div className="flex border-l border-gray-200">
+                            <button
+                                onClick={() => handleGuest(t.id)}
+                                className="w-full border border-transparent rounded-none rounded-r-lg p-2 flex items-center justify-center text-sm font-bold text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            >
+                                Continue as a guest
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        }, { id: notify })
             return;
         }
         setPaying(!paying);
@@ -42,20 +76,22 @@ const ProductPage = ({ product }) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({userId, cartItems: [{
-                id: product.id,
-                quantity,
-                size,
-                name: product.name,
-                images: [product.images[0]],
-                description: product.description,
-                price: product.price,
-            }]})
+            body: JSON.stringify({
+                userId, cartItems: [{
+                    id: product.id,
+                    quantity,
+                    size,
+                    name: product.name,
+                    images: [product.images[0]],
+                    description: product.description,
+                    price: product.price,
+                }]
+            })
         }).then(res => res.json()).then(data => {
             setClientSecret(data.clientSecret);
             toast.success('Payment Gateway Loaded', { id: notify });
         }).catch(err => {
-            toast.error( err.message , { id: notify });
+            toast.error(err.message, { id: notify });
         });
     };
 
@@ -76,7 +112,7 @@ const ProductPage = ({ product }) => {
             <Contact />
             <Header />
             {
-                !paying && <div className="bg-gray-50">
+                !paying && <div className="bg-gray-100">
                     <div className="md:grid md:grid-cols-2 place-content-center">
                         <div className="lg:grid lg:grid-cols-2">
                             <div className="rounded-xl bg-transparent p-10 w-fit">
@@ -107,17 +143,17 @@ const ProductPage = ({ product }) => {
                                 </div>
                             </div>
                             <div className="flex p-1 items-center gap-3 px-2 border w-fit rounded-lg m-2 border-gray-300">
-                        <div className="text-sm font-bold text-blue-40">Quantity</div>
-                        <div onClick={handleDecrement} className="cursor-pointer p-2">
-                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 12L18 12" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <div className="px-2 p-3 border-2 shadow-xl bg-gray-300 rounded-md">{quantity}</div>
-                        <div onClick={handleIncrement} className="cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="plus"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M8 1v14M1 8h14"></path></g></svg>
-                        </div>
-                    </div>
+                                <div className="text-sm font-bold text-blue-40">Quantity</div>
+                                <div onClick={handleDecrement} className="cursor-pointer p-2">
+                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 12L18 12" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </div>
+                                <div className="px-2 p-3 border-2 shadow-xl bg-gray-300 rounded-md">{quantity}</div>
+                                <div onClick={handleIncrement} className="cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="plus"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M8 1v14M1 8h14"></path></g></svg>
+                                </div>
+                            </div>
                             <div className="flex flex-wrap py-6">
                                 <div onClick={handlePayment} className="text-lg mr-2 mb-2 cursor-pointer p-2 bg-pink-500 text-white w-fit">
                                     BUY NOW
