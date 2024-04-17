@@ -33,7 +33,7 @@ export default async function CheckoutSession(req, res) {
             const line_items = cart.map((item) => {
                 return {
                     price_data: {
-                        currency: "eur",
+                        currency: "GBP",
                         product_data: {
                             name: item.name,
                             images: item.images,
@@ -60,7 +60,7 @@ export default async function CheckoutSession(req, res) {
                             type: "fixed_amount",
                             fixed_amount: {
                                 amount: 500,
-                                currency: "eur",
+                                currency: "GBP",
                             },
                             display_name: "Standard shipping",
                             delivery_estimate: {
