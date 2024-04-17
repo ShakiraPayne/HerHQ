@@ -10,7 +10,7 @@ export default function Header() {
             <div className="flex items-center justify-around py-2">
                 <div></div>
                 <Link href={'/'}>
-                    <Image priority height={80} width={80} src="/icons/logon.png" alt="Logo" className="h-16 w-24" />
+                    <Image priority height={80} width={80} src="/icons/logo.png" alt="Logo" className="h-16 w-24" />
                 </Link>
                 <Link href={'/liked'}>
                     <Image height={80} width={80} src="/icons/heart.png" alt="Liked" className="h-6 w-6" />
