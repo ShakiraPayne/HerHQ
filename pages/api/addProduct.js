@@ -1,7 +1,7 @@
 import cloudinary from "cloudinary";
 import { createRouter } from "next-connect";
 import multer from "multer";
-import { getDb, releaseDb } from "@/utils/mongodb";
+import { getDb } from "@/utils/mongodb";
 import jwt from "jsonwebtoken";
 const SECRET_HASH_KEY = process.env.SECRET_HASH_KEY;
 const admin = process.env.ADMIN_ID;
@@ -62,7 +62,7 @@ router.post(async (req, res) => {
                 throw err; 
             }
         }));
-        const db = await getDb();
+        const {db, client} = await getDb();
         const collection = db.collection("products");
         const product = {
             name,
@@ -73,7 +73,7 @@ router.post(async (req, res) => {
             images: uploadImages,
         }
         const result = await collection.insertOne(product);
-        await releaseDb();
+        await client.close();
         if (!result.insertedId) {
             return res.status(400).json({ message: "Failed to add product", success: false });
         }

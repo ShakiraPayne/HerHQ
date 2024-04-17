@@ -76,7 +76,7 @@ const ProductPage = ({ product }) => {
             <Contact />
             <Header />
             {
-                !paying && <div className="bg-gray-100">
+                !paying && <div className="bg-gray-50">
                     <div className="md:grid md:grid-cols-2 place-content-center">
                         <div className="lg:grid lg:grid-cols-2">
                             <div className="rounded-xl bg-transparent p-10 w-fit">
@@ -90,37 +90,39 @@ const ProductPage = ({ product }) => {
                             </div>
                         </div>
                         <div className="md:p-20 p-4 h-full flex flex-col justify-start">
-                            <h1 className="font-bold md:text-3xl greatvibes text-xl">{product.name}</h1>
-                            <h1 className="py-4 text-gray-800 font-bold">MRP : <span className="text-gray-800 font-medium text-xl">€{product.price}</span> </h1>
-                            <h1 className="text-2xl text-gray-700 greatvibes font-bold">{product.description}</h1>
-                            <h1 className="text-sm text-gray-500 my-2 hover:underline cursor-pointer">Inclusive of all taxes</h1>
+                            <h1 className="font-bold md:text-3xl  text-xl">{product.name}</h1>
+                            <h1 className="py-4 text-pink-700 font-bold">MRP : <span className="text-gray-800 font-medium text-xl">€{product.price}</span> </h1>
+                            <div className='text-pink-600 font-bold text-sm'>You saved 12% of money</div>
+                            <h1 className="text-xl text-gray-700">{product.description}</h1>
+                            <h1 className="text-sm text-pink-700 my-2 hover:underline cursor-pointer">Inclusive of all taxes</h1>
                             <div className="text-lg mt-4">
-                                <span className="font-bold">Color:</span> <span className="greatvibes">{product.color}</span>
+                                <span className="font-bold">Color:</span> <span className="text-md">{product.color}</span>
                             </div>
                             <div className="mt-4 text-gray-800 cursor-pointer">
                                 <div className="flex py-4 justify-start gap-2">
-                                    <div onClick={() => { setSize('XS') }} className={`${size == 'XS' ? 'bg-gray-800 text-white' : 'bg-gray-200'} hover:bg-gray-800 hover:text-white px-5 p-2`}>XS</div>
-                                    <div onClick={() => { setSize('S') }} className={`${size == 'S' ? 'bg-gray-800 text-white' : 'bg-gray-200'} bg-gray-200 hover:bg-gray-800 hover:text-white px-5 p-2`}>S</div>
-                                    <div onClick={() => { setSize('M') }} className={`${size == 'M' ? 'bg-gray-800 text-white' : 'bg-gray-200'} bg-gray-200 hover:bg-gray-800 hover:text-white px-5 p-2`}>M</div>
-                                    <div onClick={() => { setSize('L') }} className={`${size == 'L' ? 'bg-gray-800 text-white' : 'bg-gray-200'} bg-gray-200 hover:bg-gray-800 hover:text-white px-5 p-2`}>L</div>
+                                    <div onClick={() => { setSize('XS') }} className={`${size == 'XS' ? 'bg-gray-200 text-pink-600' : 'bg-gray-50'} hover:bg-gray-800 hover:text-white px-5 p-2`}>XS</div>
+                                    <div onClick={() => { setSize('S') }} className={`${size == 'S' ? 'bg-gray-200 text-pink-600' : 'bg-gray-50'} hover:bg-gray-800 hover:text-white px-5 p-2`}>S</div>
+                                    <div onClick={() => { setSize('M') }} className={`${size == 'M' ? 'bg-gray-200 text-pink-600' : 'bg-gray-50'} hover:bg-gray-800 hover:text-white px-5 p-2`}>M</div>
+                                    <div onClick={() => { setSize('L') }} className={`${size == 'L' ? 'bg-gray-200 text-pink-600' : 'bg-gray-50'} hover:bg-gray-800 hover:text-white px-5 p-2`}>L</div>
                                 </div>
                             </div>
-                            <div className="p-2 px-3 outline outline-gray-700 flex items-center gap-3 w-fit">
-                                <div onClick={handleDecrement}>
-                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6 12L18 12" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </div>
-                                <div className="font-bold">{quantity}</div>
-                                <div onClick={handleIncrement}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="plus"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M8 1v14M1 8h14"></path></g></svg>
-                                </div>
-                            </div>
+                            <div className="flex p-1 items-center gap-3 px-2 border w-fit rounded-lg m-2 border-gray-300">
+                        <div className="text-sm font-bold text-blue-40">Quantity</div>
+                        <div onClick={handleDecrement} className="cursor-pointer p-2">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 12L18 12" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </div>
+                        <div className="px-2 p-3 border-2 shadow-xl bg-gray-300 rounded-md">{quantity}</div>
+                        <div onClick={handleIncrement} className="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="plus"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M8 1v14M1 8h14"></path></g></svg>
+                        </div>
+                    </div>
                             <div className="flex flex-wrap py-6">
-                                <div onClick={handlePayment} className="text-lg mr-2 mb-2 cursor-pointer p-2 bg-gray-700 text-white w-fit">
+                                <div onClick={handlePayment} className="text-lg mr-2 mb-2 cursor-pointer p-2 bg-pink-500 text-white w-fit">
                                     BUY NOW
                                 </div>
-                                <div onClick={() => { toggleCart(product) }} className=" mr-2 mb-2 cursor-pointer text-lg p-2 bg-gray-700 text-white w-fit ">
+                                <div onClick={() => { toggleCart(product) }} className=" mr-2 mb-2 cursor-pointer text-lg p-2 bg-gray-500 text-white w-fit ">
                                     {products[product.id] && products[product.id].cart ? 'Added to Cart' : 'Add to Cart'}
                                 </div>
                             </div>

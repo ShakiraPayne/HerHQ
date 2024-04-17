@@ -1,4 +1,4 @@
-import { getDb, releaseDb } from '../../utils/mongodb'
+import { getDb } from '../../utils/mongodb'
 import jwt from 'jsonwebtoken'
 const secret_key = process.env.SECRET_HASH_KEY;
 import bcrypt from 'bcryptjs'
@@ -7,7 +7,7 @@ export default async function Login(req, res) {
     if (req.method === 'POST') {
         const { email, password } = req.body;
         try {
-            const db = await getDb();
+            const {db, client} = await getDb();
             const user = await db.collection('users').findOne({ email });
             if (!user) {
                 await releaseDb();
@@ -16,11 +16,11 @@ export default async function Login(req, res) {
             }
             const passwordMatch = await bcrypt.compare(password, user.password);
             if(!passwordMatch){
-                await releaseDb();
+                await client.close();
                 res.status(401).json({ message: 'Invalid credentials' });
             }
             const token = jwt.sign({ userId: user._id }, secret_key);
-            await releaseDb();
+            await client.close();
             res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Secure;`);
             return res.status(200).json({ success: true, token, message: 'User logged in', user: {id: user._id, email: user.email, name: user.name } });
         }

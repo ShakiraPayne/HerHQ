@@ -57,7 +57,7 @@ export default function CartProduct({ item }) {
                     </div>
                 </div>
                 <div className="text-center md:text-left"><span className="font-bold my-3">Price:</span> € {item.price}</div>
-                <div className="text-xs font-bold md:text-left text-center text-green-800">You saved 12% OFF</div>
+                <div className="text-xs font-bold md:text-left text-center text-green-800">You saved 12% money</div>
             </div>
         </div>
         <div className="px-4">

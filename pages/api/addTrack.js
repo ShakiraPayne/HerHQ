@@ -9,9 +9,9 @@ export default async function addTrack(req, res) {
         if (!id || !track) {
             return res.status(400).json({ success: false });
         }
-        const db = await getDb();
+        const {db, client} = await getDb();
         const result = await db.collection('orders').updateOne({ _id: new ObjectId(String(id)) }, { $set: { track: track } });
-        console.log(result);
+        await client.close();
         res.status(200).json({ success: true });
     }
     catch (error) {

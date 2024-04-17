@@ -23,7 +23,7 @@ function getOrders(orders, products) {
 }
 
 export default async function OrderHistory(req, res) {
-    const db = await getDb();
+    const {db, client} = await getDb();
     const token = req.body.token;
     const decoded = jwt.verify(token, secret_key);
     const userId = decoded.userId;
@@ -34,7 +34,7 @@ export default async function OrderHistory(req, res) {
         ProductCollection.find({}).toArray(),
         OrderCollection.find({ userId }).toArray()
     ]);
-
+    await client.close();
     const orderList = getOrders(orders, products);
     res.status(200).json({ orders: orderList });
 }

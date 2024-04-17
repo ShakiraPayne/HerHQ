@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import {getDb, releaseDb} from "@/utils/mongodb";
+import {getDb} from "@/utils/mongodb";
 const admin = process.env.ADMIN_ID;
 import { ObjectId } from "mongodb";
 const SECRET_HASH_KEY = process.env.SECRET_HASH_KEY;
@@ -13,10 +13,10 @@ export default async function deleteProduct(req, res){
             if (user_id != admin) {
                 return res.status(400).json({ message: "Unauthorized", success: false });
             }
-            const db = await getDb();
+            const {db, client} = await getDb();
             const collection = db.collection("products");
             await collection.deleteOne({ _id : new ObjectId(String(productId)) });
-            await releaseDb();
+            await client.close();
             res.status(200).json({ message: "Product deleted", success: true })
             return;
         }

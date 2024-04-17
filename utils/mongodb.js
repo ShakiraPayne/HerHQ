@@ -8,17 +8,11 @@ const client = new MongoClient(uri, {
     }
 });
 
-let cachedClient = null;
-let usageCount = 0;
 const dbName = 'herhq';
 
 async function connectToDatabase() {
-    if (cachedClient && cachedClient.isConnected) {
-        return cachedClient;
-    }
     try {
         await client.connect();
-        cachedClient = client;
         return client;
     } catch (err) {
         throw err;
@@ -27,27 +21,11 @@ async function connectToDatabase() {
 
 export async function getDb(){
     const client = await connectToDatabase();
-    usageCount++;
-    return client.db(dbName);
-}
-
-async function closeDbConnection(){
-    if(cachedClient && usageCount == 0){
-        await cachedClient.close();
-        cachedClient = null;
-    }
-}
-
-export async function releaseDb(){
-    usageCount--;
-    if(usageCount < 0){
-        usageCount = 0;
-    }
-    await closeDbConnection();
+    return  {client, db: client.db(dbName)};
 }
 
 export async function getProducts(){
-    const db = await getDb();
+    const {db, client} = await getDb();
     const products = await db.collection('products').find({}).toArray();
     const output = products.map(product => {
         return {
@@ -60,13 +38,13 @@ export async function getProducts(){
             color: product.color
         }
     });
-    releaseDb();
+    await client.close();
     return output;
 }
 
 export async function storeOrder(order){
-    const db = await getDb();
+    const {db, client} = await getDb();
     const result = await db.collection('orders').insertOne(order);
-    releaseDb();
+    await client.close();
     return result;
 }

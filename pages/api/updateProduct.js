@@ -1,4 +1,4 @@
-import {getDb, releaseDb} from '@/utils/mongodb';
+import {getDb} from '@/utils/mongodb';
 import jwt from 'jsonwebtoken';
 import { ObjectId } from 'mongodb';
 const SECRET_HASH_KEY = process.env.SECRET_HASH_KEY;
@@ -13,14 +13,16 @@ export default async function updateProduct(req, res) {
             if(user_id != admin){
                 return res.status(400).json({message: 'Unauthorized', success: false});
             }
-            const db = await getDb();
+            const {db, client} = await getDb();
             const collection = db.collection('products');
             const update = await collection.updateOne({ _id: new ObjectId(String(productId)) }, {$set: {name, color, price, description}});
             if(update.modifiedCount > 0){
+                client.close();
                 res.status(200).json({message: 'Product Updated', success: true});
                 return;
             }
             else{
+                client.close();
                 res.status(400).json({message: 'Failed to update product', success: false});
                 return;
             }

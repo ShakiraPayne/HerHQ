@@ -1,4 +1,4 @@
-import { getDb, releaseDb } from "@/utils/mongodb";
+import { getDb } from "@/utils/mongodb";
 import jwt from "jsonwebtoken";
 const admin = process.env.ADMIN_ID;
 const SECRET_HASH_KEY = process.env.SECRET_HASH_KEY;
@@ -30,7 +30,7 @@ export default async function AdminProducts(req, res) {
                 return res.status(400).json({ message: "Unauthorized", success: false });
             }
             
-            const db = await getDb();
+            const {db, client} = await getDb();
             const ProductCollection = db.collection("products");
             const OrderCollection = db.collection("orders");
 
@@ -40,8 +40,7 @@ export default async function AdminProducts(req, res) {
             ]);
 
             const orderList = getOrders(orders, products);
-            
-            await releaseDb();
+            client.close();
             res.status(200).json({ products, orders: orderList, success: true });
             return;
         } catch (err) {

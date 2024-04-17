@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { getDb, releaseDb } from '@/utils/mongodb';
+import { getDb } from '@/utils/mongodb';
 
 const compareOTPAndHashedOTP = async (otp, hashOtp) => {
     return await bcrypt.compare(otp.toString(), hashOtp);
@@ -12,11 +12,11 @@ export default async function ChangePassword(req, res) {
             try {
                 const otpValid = await compareOTPAndHashedOTP(otp, hashOtp);
                 if (otpValid) {
-                    const db = await getDb();
+                    const {db, client} = await getDb();
                     const users = db.collection('users');
                     const hashedPassword = await bcrypt.hash(password, 10);
                     await users.updateOne({ email }, { $set: { password: hashedPassword } });
-                    await releaseDb();
+                    await client.close();
                     res.status(200).json({ success: true, message: "Password updated successfully" });
                 } else {
                     res.status(400).json({ success: false, message: "Invalid OTP" });

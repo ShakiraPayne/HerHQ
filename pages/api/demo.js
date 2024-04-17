@@ -1,7 +1,7 @@
 import { getDb } from '../../utils/mongodb'
 
 export default async function Demo(req, res){
-    const db = await getDb();
+    const {db, client} = await getDb();
     const info = await db.collection('products').updateMany(
         {},
         [
@@ -12,8 +12,6 @@ export default async function Demo(req, res){
           }
         ]
       );
-
-      
-      
+      await client.close();
     res.status(200).json(info);
 }
