@@ -110,10 +110,10 @@ export default function Processing() {
     z"/>
                     </svg>
                 </div>
-                <div className="w-full text-center text-3xl font-bold text-green-600">Your order is being processed and soon will be visible in orders.</div>
-                <div className="w-full text-center text-lg text-gray-600">We will notify you once your order is verified and ready.</div>
-                <div className="w-full text-center text-lg text-gray-600">Thank you for shopping with us</div>
-                <div className="w-full text-center text-lg text-gray-600">You can check <span className="font-bold">orders in settings</span>, and status on <span className="font-bold">tracking shipments.</span></div>
+                <div className="w-full text-center px-2 text-3xl font-bold text-green-600">Your order is being processed and soon will be visible in orders.</div>
+                <div className="w-full text-center px-2 text-lg text-gray-600">We will notify you once your order is verified and ready.</div>
+                <div className="w-full text-center px-2 text-lg text-gray-600">Thank you for shopping with us</div>
+                <div className="w-full text-center px-2 text-lg text-gray-600">You can check <span className="font-bold">orders in settings</span>, and status on <span className="font-bold">tracking shipments.</span></div>
             </div>
             <Footer />
             <div className="md:h-0 h-16"></div>
