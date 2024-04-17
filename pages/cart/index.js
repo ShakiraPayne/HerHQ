@@ -32,9 +32,7 @@ export default function Cart({ items }) {
         const userId = localStorage.getItem('token');
         if (!userId) {
             toast.custom((t) => {
-                console.log("Inside toast");
                 const handleGuest = (id) => {
-                    console.log("Handle guest called.");
                     toast.dismiss(id);
                     localStorage.setItem('token', 'guest');
                     startPayment();
