@@ -33,7 +33,7 @@ export default async function CheckoutSession(req, res) {
             const line_items = cart.map((item) => {
                 return {
                     price_data: {
-                        currency: "gbp",
+                        currency: "GBP",
                         product_data: {
                             name: item.name,
                             images: item.images,
