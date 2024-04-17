@@ -48,7 +48,7 @@ export default function Liked({ items }) {
                             <div className="px-4">
                                 <hr />
                                 <div className="flex justify-between p-2">
-                                    <div onClick={() => { toggleCart(item) }} className="font-bold text-sm cursor-pointer text-blue-900">Add to Cart</div>
+                                    <div onClick={() => { toggleCart(item) }} className="font-bold text-sm cursor-pointer text-blue-900">{item.cart ? "Added" : "Add"} to Cart</div>
                                     <div onClick={() => { toggleWishlist(item) }} className="text-blue-900 text-sm font-bold cursor-pointer">Remove</div>
                                 </div>
                             </div>

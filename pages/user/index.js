@@ -110,7 +110,7 @@ export default function User() {
                         <Link href={'/orders'}>
                             <div className="border-t-2 p-4">
                                 <h1 className="text-xl">Orders</h1>
-                                <p className="text-sm">History of your orders, with delivery status.</p>
+                                <p className="text-sm">History of your orders and tracking information.</p>
                             </div></Link>
                         <Link href={'/liked'}>
                             <div className="border-t-2 p-4">
@@ -118,10 +118,10 @@ export default function User() {
                                 <p className="text-sm">Save your love products, and buy when you want.</p>
                             </div>
                         </Link>
-                        <Link href={'/shipment'}>
+                        <Link href={'/sizeChart'}>
                             <div className="border-y-2 p-4">
-                                <h1 className="text-xl">Track Shipment</h1>
-                                <p className="text-sm">Track your shipments and find the status of parcels.</p>
+                                <h1 className="text-xl">Size Chart</h1>
+                                <p className="text-sm">Before buying the product, check the fit guide/size chart.</p>
                             </div>
                         </Link>
                         <div className="flex items-center justify-center">
