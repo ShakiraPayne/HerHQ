@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node generate-service-worker.js && next build",
+    "build": "next build && node generate-service-worker.js",
     "start": "next start",
     "lint": "next lint"
   },
