@@ -16,18 +16,40 @@ import Image from "next/image";
 import { loadStripe } from '@stripe/stripe-js'
 import CartProduct from "/outsource/cartProduct";
 import Footer from "../components/common/footer";
+import { useRouter } from "next/router";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 export default function Cart({ items }) {
 
+    const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [clientSecret, setClientSecret] = useState(null);
     const { products } = useContext(MyContext);
     const cart = Object.values(products).filter(item => item.cart);
     const price = cart.reduce((acc, item) => acc + parseFloat(item.price * item.quantity), 0);
+    const [fetchController, setFetchController] = useState(null);
+
+    useEffect(() => {
+        const handleRouteChange = () => {
+            toast.dismiss();
+            if (fetchController) {
+                fetchController.abort();
+                setFetchController(null);
+            }
+        };
+
+        router.events.on('routeChangeStart', handleRouteChange);
+
+        return () => {
+            router.events.off('routeChangeStart', handleRouteChange);
+        };
+    }, [fetchController]);
 
     const startPayment = async () => {
+        const newFetchController = new AbortController();
+        setFetchController(newFetchController);
+        const signal = newFetchController.signal;
         const notify =  toast.loading('Loading Payment Gateway');
         const userId = localStorage.getItem('token');
         if (!userId) {
@@ -71,6 +93,7 @@ export default function Cart({ items }) {
             headers: {
                 'Content-Type': 'application/json'
             },
+            signal,
             body: JSON.stringify({ userId, cartItems: cart })
         }).then(res => res.json()).then(data => {
             setClientSecret(data.clientSecret);
