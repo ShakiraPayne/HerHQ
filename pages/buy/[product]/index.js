@@ -5,7 +5,7 @@ import Header from "/pages/components/common/header";
 import 'react-loading-skeleton/dist/skeleton.css';
 import Skeleton from "react-loading-skeleton";
 import { getProducts } from "/utils/mongodb";
-import React, { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Image from "next/image";
 import toast from 'react-hot-toast';
 import {
@@ -13,7 +13,6 @@ import {
     EmbeddedCheckout
 } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
-import { useState } from "react";
 import Link from 'next/link';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)

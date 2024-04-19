@@ -11,7 +11,7 @@ import {
     EmbeddedCheckoutProvider,
     EmbeddedCheckout
 } from '@stripe/react-stripe-js'
-import { useContext, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Image from "next/image";
 import { loadStripe } from '@stripe/stripe-js'
 import CartProduct from "/outsource/cartProduct";
