@@ -99,9 +99,9 @@ export default function Footer() {
                 <Link href={'/questions'}>
                     <h1 className="my-3 w-60">General Enquiries</h1>
                 </Link>
-                <Link href={'/contact'}>
+                {/* <Link href={'/contact'}>
                     <h1 className="my-3 w-60">Contact</h1>
-                </Link>
+                </Link> */}
             </div>
             <Image height={60} width={150} src="/icons/secure.jpeg" alt="secure" className="w-96 p-1" />
             <footer className="text-gray-800 p-4 text-center text-sm">
