@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-
 export default function Document() {
   return (
     <Html lang="en">
@@ -10,9 +9,10 @@ export default function Document() {
         <meta name="description" content="Clothing Brand" />
         <meta name="keywords" content="Clothing, Brand, Fashion, Style" />
         <meta name="author" content="Clothing Brand" />
-        <link rel="apple-touch-icon" href="/icons/logo.png" />
-        <link rel="icon" href="/icons/favicon.jpg" className="bg-white"/>
-        <link rel="shortcut icon" href="/icons/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="icon" href="/icons/favicon.jpg" />
+        <link rel="shortcut icon" href="/icons/favicon.jpg" type="image/png" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </Head>
       <body>
         <Main />
