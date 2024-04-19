@@ -69,6 +69,7 @@ export default function Footer() {
 
     const redirectInstallGuide = () => {
         if(isApple() && !isAppAddedToHomeScreen()){
+            setShowInstallBox(false);
             router.push("/installGuide");
         } else {
             handleInstallButtonClick();
