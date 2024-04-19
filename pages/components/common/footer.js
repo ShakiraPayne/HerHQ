@@ -33,7 +33,7 @@ export default function Footer() {
                     console.log('User dismissed the installation');
                 }
                 setDeferredPrompt(null);
-                setShowInstallBox(false); // Hide the install box after prompt
+                setShowInstallBox(false);
             });
         }
     };
@@ -59,10 +59,13 @@ export default function Footer() {
     }
 
     return (
-        <div className="bg-gray-100 p-4 relative">
+        <div className="bg-gray-100 p-4">
             {showInstallBox && (
                 <div className="absolute top-4 right-4 bg-white p-4 rounded-lg shadow-md">
-                    <Image height={40} width={40} src="/icons/logo.png" alt="logo" className="h-12" />
+                    <div className="flex items-center justify-between">
+                        <Image height={40} width={80} src="/icons/logo.png" alt="logo" className="h-12" />
+                        <Image height={40} width={40} src={'/icons/cross.png'} alt="close" className="h-12 w-12 rounded-full " />
+                    </div>
                     <p className="text-gray-700 text-sm mt-2">Install our app for the best experience!</p>
                     <button onClick={handleInstallButtonClick} className="mt-2 px-4 py-2 bg-gray-600 text-white rounded-md">
                         Install Now
