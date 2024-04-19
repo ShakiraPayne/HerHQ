@@ -6,14 +6,25 @@ export default function InstallGuide() {
     return <div>
         <Contact />
         <Header />
-        <div className="min-h-screen h-full relative pb-16 bg-white">
-            <div className="md:mt-6">
-                <div className="flex gap-4 my-4 greatvibes items-center justify-center w-full" >
-                    <div className="font-bold">Install Guide:</div>
-                </div>
-                <div className="flex flex-wrap gap-6 md:gap-8 greatvibes justify-center md:p-12 md:px-40 text-center">
-                    <div className="text-2xl">Install Guide</div>
-                </div>
+        <div>
+            <h1 className="font-bold text-2xl">Installation Steps:</h1>
+            <div className="mt-4">
+                <h1 className="text-xl font-semibold">In Safari</h1>
+                <ol>
+                    <li>Click on the Share button in the Safari browser.</li>
+                    <li>Click on the Add to Home Screen button.</li>
+                    <li>Click on the Add button.</li>
+                    <li>On home screen, you can see the app named HerHq.</li>
+                </ol>
+            </div>
+            <div className="mt-4">
+                <h1 className="text-xl font-semibold">In Chrome</h1>
+                <ol>
+                    <li>Click on the three dots in the Chrome browser.</li>
+                    <li>Click on the Add to Home Screen button.</li>
+                    <li>Click on the Add button.</li>
+                    <li>On home screen, you can see the app named HerHq.</li>
+                </ol>
             </div>
         </div>
         <Footer />

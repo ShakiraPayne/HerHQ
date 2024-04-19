@@ -21,18 +21,14 @@ export default function Footer() {
 
     useEffect(() => {
         const handleBeforeInstallPrompt = (event) => {
-            console.log('👍', 'beforeinstallprompt', event);
           event.preventDefault();
           setDeferredPrompt(event);
           handleShowInstallBox();
         };
 
         if(isApple() && !isAppAddedToHomeScreen()){
-            console.log("Apple device and not added to home screen");
             handleShowInstallBox();
         }
-        console.log("is apple", isApple());
-        console.log("is app added to home screen", isAppAddedToHomeScreen());
     
         window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     
@@ -80,7 +76,7 @@ export default function Footer() {
     }
 
     const addEmail = async () => {
-        const email = emailRef.current.value;
+        const email = emailRef.current?.value;
         if (email === "") return;
         const notify = toast.loading("Adding email to our newsletter list");
         let added = false;
@@ -102,7 +98,7 @@ export default function Footer() {
     return (
         <div className="bg-gray-100 p-4">
             {showInstallBox && (
-                <div className="absolute z-50 top-20 right-4 bg-white p-4 rounded-lg shadow-md">
+                <div className="absolute z-50 top-24 right-4 bg-white p-4 rounded-lg shadow-md">
                     <div className="flex items-center justify-between">
                         <Image height={40} width={80} src="/icons/logo.png" alt="logo" className="h-12" />
                         <Image height={40} width={40} src={'/icons/cross.png'} onClick={handleCloseButtonClick} alt="close" className="h-6 w-6 bg-gray-100 p-1 rounded-full " />
