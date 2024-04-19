@@ -7,10 +7,8 @@ import { MyContext } from '../../context/createContext';
 import Skeleton from "react-loading-skeleton";
 import toast from 'react-hot-toast';
 import Link from "next/link";
-import {
-    EmbeddedCheckoutProvider,
-    EmbeddedCheckout
-} from '@stripe/react-stripe-js'
+const loadStripe = () => import('@stripe/stripe-js');
+// const {EmbeddedCheckoutProvider, EmbeddedCheckout} = () => import('@stripe/react-stripe-js');
 import { useEffect, useState, useContext } from 'react';
 import Image from "next/image";
 import { loadStripe } from '@stripe/stripe-js'
@@ -29,6 +27,17 @@ export default function Cart({ items }) {
     const cart = Object.values(products).filter(item => item.cart);
     const price = cart.reduce((acc, item) => acc + parseFloat(item.price * item.quantity), 0);
     const [fetchController, setFetchController] = useState(null);
+    const [EmbeddedCheckouts, setEmbeddedCheckout] = useState(null);
+    const [EmbeddedCheckoutProviders, setEmbeddedCheckoutProvider] = useState(null);
+
+    useEffect(()=>{
+        const loadStripe = async () => {
+            const {EmbeddedCheckoutProvider, EmbeddedCheckout} = await import('@stripe/react-stripe-js');
+            setEmbeddedCheckout(EmbeddedCheckout);
+            setEmbeddedCheckoutProvider(EmbeddedCheckoutProvider);
+        }
+        loadStripe();
+    }, [])
 
     useEffect(() => {
         const handleRouteChange = () => {
@@ -170,10 +179,10 @@ export default function Cart({ items }) {
 
             {
                 !loading && (
-                    clientSecret ?
-                        <EmbeddedCheckoutProvider stripe={stripePromise} options={{ clientSecret }}>
-                            <EmbeddedCheckout />
-                        </EmbeddedCheckoutProvider> :
+                    clientSecret && EmbeddedCheckoutProviders && EmbeddedCheckouts ?
+                        <EmbeddedCheckoutProviders stripe={stripePromise} options={{ clientSecret }}>
+                            <EmbeddedCheckouts />
+                        </EmbeddedCheckoutProviders> :
                         <div className="text-center">
                             <Skeleton height={500} />
                         </div>)
