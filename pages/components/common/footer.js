@@ -7,11 +7,13 @@ export default function Footer() {
 
     const emailRef = useRef();
     const [deferredPrompt, setDeferredPrompt] = useState(null);
+    const [showInstallBox, setShowInstallBox] = useState(false);
 
     useEffect(() => {
         const handleBeforeInstallPrompt = (event) => {
           event.preventDefault();
           setDeferredPrompt(event);
+          setShowInstallBox(true);
         };
     
         window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -21,20 +23,20 @@ export default function Footer() {
         };
       }, []);
     
-      const handleInstallButtonClick = () => {
+    const handleInstallButtonClick = () => {
         if (deferredPrompt) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              console.log('User accepted the installation');
-            } else {
-              console.log('User dismissed the installation');
-            }
-            setDeferredPrompt(null);
-          });
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the installation');
+                } else {
+                    console.log('User dismissed the installation');
+                }
+                setDeferredPrompt(null);
+                setShowInstallBox(false); // Hide the install box after prompt
+            });
         }
-      };
-    
+    };
 
     const addEmail = async () => {
         const email = emailRef.current.value;
@@ -57,7 +59,16 @@ export default function Footer() {
     }
 
     return (
-        <div className="bg-gray-100 p-4">
+        <div className="bg-gray-100 p-4 relative">
+            {showInstallBox && (
+                <div className="absolute top-4 right-4 bg-white p-4 rounded-lg shadow-md">
+                    <Image height={40} width={40} src="/icons/logo.png" alt="logo" className="h-12" />
+                    <p className="text-gray-700 text-sm mt-2">Install our app for the best experience!</p>
+                    <button onClick={handleInstallButtonClick} className="mt-2 px-4 py-2 bg-gray-600 text-white rounded-md">
+                        Install Now
+                    </button>
+                </div>
+            )}
             <div className="flex items-center md:justify-around justify-between flex flex-wrap">
                 <div className="w-fit">
                     <div className="m-2 rounded-md p-6">
@@ -84,7 +95,7 @@ export default function Footer() {
                 <Link href={'/ambassador'}>
                     <h1 className="my-3 w-60">Become Our Ambassador</h1>
                 </Link>
-                <button onClick={handleInstallButtonClick}>
+                <button className="my-3 w-60" onClick={handleInstallButtonClick}>
                     Install App
                 </button>
                 <Link href={'/sizeChart'}>
@@ -99,9 +110,6 @@ export default function Footer() {
                 <Link href={'/questions'}>
                     <h1 className="my-3 w-60">General Enquiries</h1>
                 </Link>
-                {/* <Link href={'/contact'}>
-                    <h1 className="my-3 w-60">Contact</h1>
-                </Link> */}
             </div>
             <Image height={60} width={150} src="/icons/secure.jpeg" alt="secure" className="w-96 p-1" />
             <footer className="text-gray-800 p-4 text-center text-sm">
