@@ -11,19 +11,24 @@ export default function Footer() {
     const [deferredPrompt, setDeferredPrompt] = useState(null);
     const [showInstallBox, setShowInstallBox] = useState(false);
 
+    const handleShowInstallBox = () => {
+        const lastPromptTime = localStorage.getItem('lastPromptTime');
+        const currentTime = new Date().getTime();
+        if (!lastPromptTime || currentTime - parseInt(lastPromptTime) > 7 * 24 * 60 * 60 * 1000) {
+            setShowInstallBox(true);
+        }
+    }
+
     useEffect(() => {
         const handleBeforeInstallPrompt = (event) => {
           event.preventDefault();
           setDeferredPrompt(event);
-          const lastPromptTime = localStorage.getItem('lastPromptTime');
-          const currentTime = new Date().getTime();
-        console.log(lastPromptTime, currentTime, currentTime - parseInt(lastPromptTime));
-          if (!lastPromptTime || currentTime - parseInt(lastPromptTime) > 7 * 24 * 60 * 60 * 1000) {
-            console.log('showing install box');
-            setShowInstallBox(true);
-          }
-          console.log('beforeinstallprompt event fired');
+          handleShowInstallBox();
         };
+
+        if(isApple() && !isAppAddedToHomeScreen()){
+            handleShowInstallBox();
+        }
     
         window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     
