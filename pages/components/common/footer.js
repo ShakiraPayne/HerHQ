@@ -31,6 +31,8 @@ export default function Footer() {
             console.log("Apple device and not added to home screen");
             handleShowInstallBox();
         }
+        console.log("is apple", isApple());
+        console.log("is app added to home screen", isAppAddedToHomeScreen());
     
         window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     
