@@ -5,11 +5,11 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#FFFFFF" />
+        <meta name="theme-color" content="#000000" />
         <meta name="description" content="Clothing Brand" />
         <meta name="keywords" content="Clothing, Brand, Fashion, Style" />
         <meta name="author" content="Clothing Brand" />
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/icons/logo.png" />
         <link rel="icon" href="/icons/favicon.jpg" />
         <link rel="shortcut icon" href="/icons/favicon.jpg" type="image/png" />
       </Head>
