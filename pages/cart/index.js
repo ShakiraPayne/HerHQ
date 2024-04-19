@@ -167,7 +167,7 @@ export default function Cart({ items }) {
 
             {
                 !loading && (
-                    clientSecret && EmbeddedCheckoutProviders && EmbeddedCheckouts ?
+                    clientSecret ?
                         <EmbeddedCheckoutProvider stripe={stripePromise} options={{ clientSecret }}>
                             <EmbeddedCheckout />
                         </EmbeddedCheckoutProvider> :
