@@ -1,18 +1,19 @@
-import { getProducts } from "../../utils/mongodb";
-import Header from "../components/common/header";
-import 'react-loading-skeleton/dist/skeleton.css';
-import Contact from "../components/common/contact";
+import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe-js";
 import AddProduct from "../components/common/addproduct";
+import Contact from "../components/common/contact";
+import Header from "../components/common/header";
 import { MyContext } from '../../context/createContext';
-import Skeleton from "react-loading-skeleton";
-import toast from 'react-hot-toast';
-import Link from "next/link";
 import { useEffect, useState, useContext } from 'react';
-import Image from "next/image";
-import { loadStripe } from '@stripe/stripe-js'
-import CartProduct from "/outsource/cartProduct";
 import Footer from "../components/common/footer";
+import CartProduct from "/outsource/cartProduct";
+import { getProducts } from "../../utils/mongodb";
+import 'react-loading-skeleton/dist/skeleton.css';
+import Skeleton from "react-loading-skeleton";
+import { loadStripe } from '@stripe/stripe-js'
 import { useRouter } from "next/router";
+import toast from 'react-hot-toast';
+import Image from "next/image";
+import Link from "next/link";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
@@ -25,17 +26,6 @@ export default function Cart({ items }) {
     const cart = Object.values(products).filter(item => item.cart);
     const price = cart.reduce((acc, item) => acc + parseFloat(item.price * item.quantity), 0);
     const [fetchController, setFetchController] = useState(null);
-    const [EmbeddedCheckouts, setEmbeddedCheckout] = useState(null);
-    const [EmbeddedCheckoutProviders, setEmbeddedCheckoutProvider] = useState(null);
-
-    useEffect(()=>{
-        const loadStripe = async () => {
-            const {EmbeddedCheckoutProvider, EmbeddedCheckout} = await import('@stripe/react-stripe-js');
-            setEmbeddedCheckout(EmbeddedCheckout);
-            setEmbeddedCheckoutProvider(EmbeddedCheckoutProvider);
-        }
-        loadStripe();
-    }, [])
 
     useEffect(() => {
         const handleRouteChange = () => {
@@ -178,9 +168,9 @@ export default function Cart({ items }) {
             {
                 !loading && (
                     clientSecret && EmbeddedCheckoutProviders && EmbeddedCheckouts ?
-                        <EmbeddedCheckoutProviders stripe={stripePromise} options={{ clientSecret }}>
-                            <EmbeddedCheckouts />
-                        </EmbeddedCheckoutProviders> :
+                        <EmbeddedCheckoutProvider stripe={stripePromise} options={{ clientSecret }}>
+                            <EmbeddedCheckout />
+                        </EmbeddedCheckoutProvider> :
                         <div className="text-center">
                             <Skeleton height={500} />
                         </div>)
