@@ -2,10 +2,12 @@ import Link from "next/link";
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/router";
 
 export default function Footer() {
 
     const emailRef = useRef();
+    const router = useRouter();
     const [deferredPrompt, setDeferredPrompt] = useState(null);
     const [showInstallBox, setShowInstallBox] = useState(false);
 
@@ -17,11 +19,20 @@ export default function Footer() {
         };
     
         window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+        if(isApple && !isAppAddedToHomeScreen()){
+            setShowInstallBox(true);
+        }
     
         return () => {
           window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
         };
       }, []);
+
+    const isApple = () => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        return /iPhone|iPad|iPod/i.test(userAgent);
+    }
     
     const handleInstallButtonClick = () => {
         if (deferredPrompt) {
@@ -37,6 +48,20 @@ export default function Footer() {
             });
         }
     };
+
+    const isAppAddedToHomeScreen = () => {
+        return isAppleDevice() && window.navigator.standalone;
+    };
+
+    const redirectInstallGuide = () => {
+        if(isApple && !isAppAddedToHomeScreen()){
+            router.push("/installGuide");
+
+        }
+        else{
+            handleInstallButtonClick();
+        }
+    }
 
     const addEmail = async () => {
         const email = emailRef.current.value;
@@ -67,7 +92,7 @@ export default function Footer() {
                         <Image height={40} width={40} src={'/icons/cross.png'} onClick={()=>{setShowInstallBox(false)}} alt="close" className="h-6 w-6 bg-gray-100 p-1 rounded-full " />
                     </div>
                     <p className="text-gray-700 text-sm mt-2">Install our app for the best experience!</p>
-                    <button onClick={handleInstallButtonClick} className="mt-2 px-4 py-2 bg-gray-600 text-white rounded-md">
+                    <button onClick={redirectInstallGuide} className="mt-2 px-4 py-2 bg-gray-600 text-white rounded-md">
                         Install Now
                     </button>
                 </div>
@@ -98,7 +123,7 @@ export default function Footer() {
                 <Link href={'/ambassador'}>
                     <h1 className="my-3 w-60">Become Our Ambassador</h1>
                 </Link>
-                <button className="my-3 w-60" onClick={handleInstallButtonClick}>
+                <button className="my-3 w-60" onClick={redirectInstallGuide}>
                     Install App
                 </button>
                 <Link href={'/sizeChart'}>

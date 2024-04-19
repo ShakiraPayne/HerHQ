@@ -5,9 +5,6 @@ const withPWA = require("next-pwa")({
 });
 
 const nextConfig = withPWA({
-  experimental: {
-    newNextLinkBehavior: true,
-  },
   images: {
     domains: ['res.cloudinary.com'],
   },
