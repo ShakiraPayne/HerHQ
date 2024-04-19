@@ -1,8 +1,22 @@
 import Contact from "/pages/components/common/contact";
 import Header from "/pages/components/common/header";
 import Footer from "/pages/components/common/footer";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Processing() {
+    const router = useRouter();
+    const cart = router.query.cart;
+    const { removeCart } = useContext(MyContext);
+
+    useEffect(()=>{
+        if(cart){
+            if(cart === 'true'){
+                removeCart();
+            }
+        }
+    })
+
     return (
         <div className={`portslat min-h-screen h-full relative pb-16 bg-white`}>
             <Contact />

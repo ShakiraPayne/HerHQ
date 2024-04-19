@@ -82,7 +82,7 @@ export default async function CheckoutSession(req, res) {
                 line_items,
                 mode: "payment",
                 customer: customer.id,
-                return_url: `${process.env.NEXT_PUBLIC_DOMAIN}/buy/processing`,
+                return_url: `${process.env.NEXT_PUBLIC_DOMAIN}/buy/processing?cart=${req.body.cart}`,
             });
             res.status(200).json({ clientSecret: session.client_secret });
         }

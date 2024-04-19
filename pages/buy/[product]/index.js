@@ -84,7 +84,8 @@ const ProductPage = ({ product }) => {
                     images: [product.images[0]],
                     description: product.description,
                     price: product.price,
-                }]
+                }],
+                cart : false
             })
         }).then(res => res.json()).then(data => {
             setClientSecret(data.clientSecret);

@@ -94,7 +94,7 @@ export default function Cart({ items }) {
                 'Content-Type': 'application/json'
             },
             signal,
-            body: JSON.stringify({ userId, cartItems: cart })
+            body: JSON.stringify({ userId, cartItems: cart, cart: true })
         }).then(res => res.json()).then(data => {
             setClientSecret(data.clientSecret);
             toast.success('Payment Gateway Loaded', { id: notify });

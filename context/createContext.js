@@ -70,8 +70,14 @@ const MyContextProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(toAd));
   }
 
+  const removeCart = () => {
+    const wishlistProducts = Object.values(products).filter((product) => !product.cart);
+    setProducts(wishlistProducts);
+    localStorage.setItem('cart', JSON.stringify(wishlistProducts));
+  };
+
   return (
-    <MyContext.Provider value={{ products, toggleCart, toggleWishlist, sizeUpdate, qtyUpdate }}>
+    <MyContext.Provider value={{ products, toggleCart, toggleWishlist, sizeUpdate, qtyUpdate, removeCart }}>
       {children}
     </MyContext.Provider>
   );

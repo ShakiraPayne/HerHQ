@@ -68,7 +68,7 @@ function AppHeader() {
                 <Link href={'/'}>
                     <div className="p-2">
                         <Image priority height={20} width={20} src="/icons/bikini2.png" alt="Logo" className="h-8 w-8" />
-                        <h1>her hq</h1>
+                        <h1>HerHq</h1>
                     </div>
                 </Link>
                 <Link href={'/liked'}>
