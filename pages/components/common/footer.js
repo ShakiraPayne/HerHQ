@@ -17,9 +17,12 @@ export default function Footer() {
           setDeferredPrompt(event);
           const lastPromptTime = localStorage.getItem('lastPromptTime');
           const currentTime = new Date().getTime();
+        console.log(lastPromptTime, currentTime, currentTime - parseInt(lastPromptTime));
           if (!lastPromptTime || currentTime - parseInt(lastPromptTime) > 7 * 24 * 60 * 60 * 1000) {
+            console.log('showing install box');
             setShowInstallBox(true);
           }
+          console.log('beforeinstallprompt event fired');
         };
     
         window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
