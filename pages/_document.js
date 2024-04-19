@@ -10,7 +10,7 @@ export default function Document() {
         <meta name="keywords" content="Clothing, Brand, Fashion, Style" />
         <meta name="author" content="Clothing Brand" />
         <link rel="apple-icon" href="/icons/favicon.jpg" />
-        <link rel="apple-touch-icon" href="/icons/favicon.jpg" />
+        <link rel="apple-touch-icon" href="/icons/logo.png" />
         <link rel="icon" href="/icons/favicon.jpg" />
       </Head>
       <body>
