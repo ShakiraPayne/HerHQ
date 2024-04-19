@@ -1,7 +1,7 @@
 import Contact from "/pages/components/common/contact";
 import Header from "/pages/components/common/header";
 import Footer from "/pages/components/common/footer";
-import MyContext from "../../../context/createContext";
+import { MyContext } from "../../../context/createContext";
 import { useRouter } from "next/router";
 import { useEffect, useContext } from "react";
 
