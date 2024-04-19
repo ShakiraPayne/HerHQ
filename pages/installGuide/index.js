@@ -15,7 +15,7 @@ export default function InstallGuide() {
                         <li>Click on the Share button in the Safari browser.</li>
                         <li>Click on the Add to Home Screen button.</li>
                         <li>Click on the Add button.</li>
-                        <li>On the home screen, you can see the app named HerHq.</li>
+                        <li>On the home screen, you can see the app named HerHQ.</li>
                     </ol>
                 </div>
                 <div className="mt-8">
@@ -24,7 +24,7 @@ export default function InstallGuide() {
                         <li>Click on the three dots in the Chrome browser.</li>
                         <li>Click on the Add to Home Screen button.</li>
                         <li>Click on the Add button.</li>
-                        <li>On the home screen, you can see the app named HerHq.</li>
+                        <li>On the home screen, you can see the app named HerHQ.</li>
                     </ol>
                 </div>
             </div>

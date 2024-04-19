@@ -35,8 +35,8 @@ function Card({ img }) {
             <div className="flex items-center px-4 py-3">
                 <Image height={60} width={60} src="/icons/logo.png" alt="Profile" className="h-10 w-10 rounded-full border p-2" />
                 <div className="ml-3 ">
-                    <span className="text-sm font-semibold antialiased block leading-tight">herhq</span>
-                    <span className="text-gray-600 text-xs block">Beach</span>
+                    <span className="text-sm font-semibold antialiased block leading-tight">herhqofficial</span>
+                    <span className="text-gray-600 text-xs block">The Beach</span>
                 </div>
             </div>
             <Image height={480} width={358} src={img} alt="Ambassador" className="h-[480px] opacity-100 hover:opacity-60" />
