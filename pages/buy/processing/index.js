@@ -2,7 +2,7 @@ import Contact from "/pages/components/common/contact";
 import Header from "/pages/components/common/header";
 import Footer from "/pages/components/common/footer";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 
 export default function Processing() {
     const router = useRouter();
