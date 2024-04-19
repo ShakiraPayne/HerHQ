@@ -1,37 +1,58 @@
 import Link from "next/link";
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Image from "next/image";
 import { toast } from "react-hot-toast";
 
 export default function Footer() {
 
     const emailRef = useRef();
+    const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+    useEffect(() => {
+        const handleBeforeInstallPrompt = (event) => {
+          event.preventDefault();
+          setDeferredPrompt(event);
+        };
+    
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    
+        return () => {
+          window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
+      }, []);
+    
+      const handleInstallButtonClick = () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the installation');
+            } else {
+              console.log('User dismissed the installation');
+            }
+            setDeferredPrompt(null);
+          });
+        }
+      };
+    
 
     const addEmail = async () => {
         const email = emailRef.current.value;
         if (email === "") return;
         const notify = toast.loading("Adding email to our newsletter list");
         let added = false;
-        await fetch("/api/newsletter", {
+        fetch("/api/newsletter", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ email })
         })
-            .then(res => res.json())
-            .then(data => {
-                added = data.added;
-            });
 
-        if (added) {
-            toast.success("Email added to our newsletter list", { id: notify });
-        }
-        else {
-            notify(() => {
-                toast.error("Failed to add email to our newsletter list", { id: notify });
-            });
-        }
+        setTimeout(()=>{
+            toast.success("Requested", {id: notify});
+        }, 1500)
+        
         emailRef.current.value = "";
     }
 
@@ -63,6 +84,9 @@ export default function Footer() {
                 <Link href={'/ambassador'}>
                     <h1 className="my-3 w-60">Become Our Ambassador</h1>
                 </Link>
+                <button onClick={handleInstallButtonClick}>
+                    Install App
+                </button>
                 <Link href={'/sizeChart'}>
                     <h1 className="my-3 w-60">Size Chart</h1>
                 </Link>

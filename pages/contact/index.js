@@ -32,17 +32,11 @@ export default function Home() {
                 method: "POST",
                 body: formData,
             })
-                .then(res => res.json())
-                .then(({ success }) => {
-                    if (success) {
-                        toast.success('Will Contacted Soon.', { id: notify });
-                    } else {
-                        toast.error('Failed to send message.', { id: notify });
-                    }
-                })
-                .catch(err => {
-                    toast.error('Failed to send message.', { id: notify });
-                });
+
+            setTimeout(()=>{
+                toast.success("Will Contacted Soon", {id : notify});
+            }, 1500);
+            
         } else {
             toast.error('Please fill all the fields and select an image.', { id: notify });
         }

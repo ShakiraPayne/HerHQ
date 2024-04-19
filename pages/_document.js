@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#FF0075" />
+        <meta name="theme-color" content="#000000" />
         <meta name="description" content="Clothing Brand" />
         <meta name="keywords" content="Clothing, Brand, Fashion, Style" />
         <meta name="author" content="Clothing Brand" />
