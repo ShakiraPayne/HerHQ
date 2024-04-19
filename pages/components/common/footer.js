@@ -46,6 +46,10 @@ export default function Footer() {
         return /iPhone|iPad|iPod/i.test(userAgent);
     }
     
+    const isAppAddedToHomeScreen = () => {
+        return isAppleDevice() && window.navigator.standalone;
+    };
+
     const handleInstallButtonClick = () => {
         if (deferredPrompt) {
             deferredPrompt.prompt();
