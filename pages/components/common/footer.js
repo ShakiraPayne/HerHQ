@@ -47,7 +47,7 @@ export default function Footer() {
     }
     
     const isAppAddedToHomeScreen = () => {
-        return isAppleDevice() && window.navigator.standalone;
+        return isApple() && window.navigator.standalone;
     };
 
     const handleInstallButtonClick = () => {
