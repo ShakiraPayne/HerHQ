@@ -6,7 +6,7 @@ export default function Varities() {
         <div className="p-3 text-2xl block font-bold bg-gray-100 nerkoone">
             <h1 className="text-center font-mono my-10 mt-6 vibes">SHOP NOW</h1>
             <Link href={'/buy'}>
-                <div className="grid md:grid-cols-4 gap-4 grid-cols-2 md:px-16 md:gap-6 text-sm font-mono font-bold text-center">
+                <div className="grid md:grid-cols-4 gap-4 grid-cols-2 md:px-16 md:gap-6 text-sm font-mono text-center">
                     <div className="rounded-xl bg-white overflow-hidden">
                         <Image height={500} width={300} src="/product/img1.jpg" alt="Sorry N Sorry" />
                         <h2 className="p-2">Sorry N Sorry</h2>
