@@ -21,12 +21,14 @@ export default function Footer() {
 
     useEffect(() => {
         const handleBeforeInstallPrompt = (event) => {
+            console.log('👍', 'beforeinstallprompt', event);
           event.preventDefault();
           setDeferredPrompt(event);
           handleShowInstallBox();
         };
 
         if(isApple() && !isAppAddedToHomeScreen()){
+            console.log("Apple device and not added to home screen");
             handleShowInstallBox();
         }
     
