@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import LoadingBar from 'react-top-loading-bar'
+import { Analytics } from "@vercel/analytics/react"
 import { MyContextProvider } from "/context/createContext";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -36,6 +37,7 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
     </MyContextProvider>
     <SpeedInsights />
+    <Analytics />
   </>
 
 }
