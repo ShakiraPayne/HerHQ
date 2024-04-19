@@ -7,8 +7,6 @@ import { MyContext } from '../../context/createContext';
 import Skeleton from "react-loading-skeleton";
 import toast from 'react-hot-toast';
 import Link from "next/link";
-const loadStripe = () => import('@stripe/stripe-js');
-// const {EmbeddedCheckoutProvider, EmbeddedCheckout} = () => import('@stripe/react-stripe-js');
 import { useEffect, useState, useContext } from 'react';
 import Image from "next/image";
 import { loadStripe } from '@stripe/stripe-js'
