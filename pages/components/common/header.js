@@ -67,7 +67,7 @@ function AppHeader() {
             <div className="flex text-xs items-center justify-around">
                 <Link href={'/'}>
                     <div className="p-2">
-                        <Image priority height={20} width={20} src="/icons/bikini2.png" alt="Logo" className="h-8 w-8" />
+                        <Image priority height={20} width={20} src="/icons/bikini.png" alt="Logo" className="h-8 w-8" />
                         <h1>HerHQ</h1>
                     </div>
                 </Link>
