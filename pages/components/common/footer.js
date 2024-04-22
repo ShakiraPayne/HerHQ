@@ -154,7 +154,7 @@ export default function Footer() {
             </div>
             <Image height={60} width={150} src="/icons/secure.jpeg" alt="secure" className="w-96 p-1" />
             <footer className="text-gray-800 p-4 text-center text-sm">
-                <p>© 2024 HerHQ. Build For YOU.</p>
+                <p>© 2024 HerHQ. Built For YOU.</p>
             </footer>
         </div>
     )
