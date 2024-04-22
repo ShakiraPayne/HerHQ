@@ -7,7 +7,6 @@ export default function Ambassador() {
             <div className="h-0.5 w-full bg-pink-500"></div>
             <div className="bg-white p-4 pt-8 flex flex-col items-center justify-center">
                 <div className="font-mono text-xl">Follow our <Link className="text-pink-700" href={'https://www.instagram.com/herhqofficial/'}>Instagram</Link> to stay in the know.</div>
-                <div className="text-3xl my-6 font-bold text-center">@herhqofficial</div>
                 <div className="p-4 text-center max-w-[500px] text-gray-600">See the styles 💗 by others and share the styles you 💗</div>
             </div>
             <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 justify-items-center lg:place-content-center bg-white">
