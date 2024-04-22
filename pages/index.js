@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Contact from "./components/common/contact";
 import Header from "./components/common/header";
 import Varities from './components/home/varities'
