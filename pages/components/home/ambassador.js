@@ -10,7 +10,7 @@ export default function Ambassador() {
                 <div className="text-3xl my-6 font-bold text-center">@herhqofficial</div>
                 <div className="p-4 text-center max-w-[500px] text-gray-600">See the styles 💗 by others and share the styles you 💗</div>
             </div>
-            <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-3 bg-white content-center md:p-6 gap-6 place-items-center place-content-center">
+            <div className="flex overflow-x-auto md:flex-wrap bg-white content-center md:p-6 gap-6 place-items-center place-content-center">
                 <Card img={"/ambassador/amb1.jpg"} />
                 <Card img={"/ambassador/amb2.jpg"} />
                 <Card img={"/ambassador/amb3.jpg"} />
@@ -30,7 +30,7 @@ export default function Ambassador() {
 }
 
 function Card({ img }) {
-    return <div className="bg-white max-w-96 p-3">
+    return <div className="bg-white w-96 p-3">
         <div className="bg-white max-w-96 border h-full rounded-sm">
             <div className="flex items-center px-4 py-3">
                 <Image height={60} width={60} src="/icons/logo.png" alt="Profile" className="h-10 w-10 rounded-full border p-2" />
