@@ -15,7 +15,7 @@ export default function Ambassador() {
                 <Card img={"/ambassador/amb3.jpg"} />
                 <Card img={"/ambassador/amb4.jpg"} />
                 <Card img={"/ambassador/amb5.jpg"} />
-                <Card img={"/ambassador/amb1.jpg"} />
+                <Card img={"/ambassador/amb6.jpg"} />
             </div>
             <div className="flex bg-white py-8 flex-col items-center justify-center">
                 <div className="p-4 text-center max-w-[600px] text-gray-900">
